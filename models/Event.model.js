@@ -1,22 +1,22 @@
 // Event.model.js
 const mongoose = require("mongoose");
 const eventSchema = new mongoose.Schema({
-    _id: ObjectId,
+    _id: mongoose.Types.ObjectId,
     name: String,
-    startDate: Date,    
+    startDate: Date,
     endDate: Date,
     tags: [String],
     category: [String],
     difficulty: String,
     location: String,
-    trainer: ObjectId,
+    trainer: mongoose.Types.ObjectId,
     language: String,
-    participants: [{ user: ObjectId, name: String, hasPayed: Boolean}],
-    comments: [{user: ObjectId, name: String, text: String, date: Date}],
+    participants: [{ user: mongoose.Types.ObjectId, name: String, hasPayed: Boolean}],
+    comments: [{user: mongoose.Types.ObjectId, name: String, text: String, date: Date}],
     description: String,
     sessionLink: String,
     paymentLink: String,
-    rating: [{user: ObjectId, value: Number, comment: String}],
+    rating: [{user: mongoose.Types.ObjectId, value: Number, comment: String}],
 });
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;

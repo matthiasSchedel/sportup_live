@@ -75,7 +75,6 @@
             <div class="alert alert-danger" role="alert"><%- messages.error %></div>
             <% } %>
             <div class="row">
-
                 <p>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addEvent"
                         aria-expanded="false" aria-controls="addEvent">
@@ -85,12 +84,36 @@
                 <div class="collapse" id="addEvent">
                     <form action="/events" method="post">
                         <div class="form-group row">
-                            <label class="col-4"></label>
+                            <label class="col-4">Event Name</label>
                             <div class="col-8">
-                                <input id="eventName" name="eventName" placeholder="Event Name" type="text"
-                                    class="form-control">
+                                <input id="name" name="name" type="text" class="form-control">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="example-datetime-local-input" class="col-2 col-form-label">Event Start</label>
+                            <div class="col-10">
+                                <input class="form-control" id="startDate" value="2020-03-10T13:45:00" name="startDate"
+                                    type="datetime-local" id="example-datetime-local-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-datetime-local-input" class="col-2 col-form-label">Event Ende</label>
+                            <div class="col-10">
+                                <input class="form-control" id="endDate" value="2020-03-10T14:45:00" name="endDate"
+                                    type="datetime-local" id="example-datetime-local-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description"></label>
+                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        </div>
+
+
+
+
                         <div class="form-group row">
                             <div class="offset-4 col-8">
                                 <button name="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -106,30 +129,25 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Start</th>
+                            <th scope="col">Ende</th>
+                            <th scope="col">Beschreibung</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <% if (locals.events) { %>
+                        <% for(var i=0; i<events.length; i++) {%>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><%= i %></th>
+                            <td><%= events[i].name %></td>
+                            <td><%= events[i].startDate %></td>
+                            <td><%= events[i].endDate %></td>
+                            <td><%= events[i].description %></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <% } %>
+                        <% } %>
+
                     </tbody>
                 </table>
             </div>

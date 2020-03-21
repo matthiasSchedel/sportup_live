@@ -17,6 +17,7 @@ RUN npm install # --quiet
 RUN npm install -g nodemon
 RUN npm install express-flash
 RUN npm install express-session
+RUN npm install body-parser
 # RUN ls /usr/src/app
 # RUN ls /usr/src/app/ejs
 

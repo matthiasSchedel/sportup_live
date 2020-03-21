@@ -6,6 +6,7 @@ var logger = require('morgan');
 var flash = require('express-flash');
 var session = require('express-session');
 var mongoose = require("mongoose");
+var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');
 var usersRouter = require('./routes/users');
@@ -32,7 +33,8 @@ app.use(session({
     secret: 'secret'
 }))
 app.use(flash());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/events', eventsRouter);
