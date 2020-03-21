@@ -1,0 +1,23 @@
+version: "2"
+services:
+  mongo:
+    image: mongo
+  sportup:
+    build:
+      context: .
+      dockerfile: node.Dockerfile
+    image: node
+    links:
+      - mongo
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app.js:/usr/src/app/app.js
+      - ./index.js:/usr/src/app/index.js
+      - ./models:/usr/src/app/models
+      - ./routes:/usr/src/app/routes
+      - ./updates:/usr/src/app/updates
+      - ./bin:/usr/src/app/bin
+      - ./ejs:/usr/src/app/ejs
+      - ./views:/usr/src/app/views
+      - ./public:/usr/src/app/public

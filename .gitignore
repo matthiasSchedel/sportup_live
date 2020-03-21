@@ -1,4 +1,7 @@
 # Logs
+
+/express
+/bin
 logs
 *.log
 npm-debug.log*
