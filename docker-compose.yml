@@ -2,6 +2,7 @@ version: "2"
 services:
   mongo:
     image: mongo
+
   sportup:
     build:
       context: .
@@ -17,7 +18,6 @@ services:
       - ./models:/usr/src/app/models
       - ./routes:/usr/src/app/routes
       - ./updates:/usr/src/app/updates
-      - ./bin:/usr/src/app/bin
-      - ./ejs:/usr/src/app/ejs
+      - ./bin:/usr/src/app/bin      
       - ./views:/usr/src/app/views
       - ./public:/usr/src/app/public
