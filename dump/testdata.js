@@ -1,4 +1,4 @@
-db = db.getSiblingDB("sportup")
+db = db.getSiblingDB(process.env.MONGO_INITDB_DATABASE)
 db.events.remove({})
 db.users.remove({})
 db.trainers.remove({})
@@ -36,7 +36,7 @@ db.events.insert({
         user: new ObjectId("000000000000000000000002"),
         rating: 2,
         comment: "Geht so"
-    }],    
+    }],
 })
 
 db.events.insert({
@@ -73,7 +73,7 @@ db.events.insert({
         user: new ObjectId("000000000000000000000003"),
         rating: 4,
         comment: "Top"
-    }],    
+    }],
 })
 
 
@@ -151,7 +151,7 @@ db.trainers.insert({
         link: "https://facebook.com/"
     }, {
         network: "instagram",
-        link: "https://instagram.com/" 
+        link: "https://instagram.com/"
     }],
     languages: ["de"],
     paymentLink: "https://paypal.me"
@@ -165,7 +165,7 @@ db.trainers.insert({
         link: "https://facebook.com/"
     }, {
         network: "instagram",
-        link: "https://instagram.com/" 
+        link: "https://instagram.com/"
     }],
     languages: ["de", "at"],
     paymentLink: "https://paypal.me"
@@ -180,7 +180,7 @@ db.participants.insert({
     }, {
         event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }],
     groups: [{
         group: new ObjectId("000000000000000000000200"),
@@ -194,7 +194,7 @@ db.participants.insert({
     events: [{
         event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }]
 })
 
@@ -203,7 +203,7 @@ db.participants.insert({
     events: [{
         event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }]
 })
 
@@ -212,7 +212,7 @@ db.participants.insert({
     events: [{
         event: new ObjectId("000000000000000000000100"),
         name: "Workout 1",
-        startDate: new Date("2020-03-22T15:00:00")       
+        startDate: new Date("2020-03-22T15:00:00")
     }]
 })
 

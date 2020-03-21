@@ -1,10 +1,13 @@
 // Trainer.model.js
 const mongoose = require("mongoose");
+// var ObjectId = mongoose.ObjectId;
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
 const trainerSchema = new mongoose.Schema({
     user: ObjectId,
     bio: String,
     location: String,
-    socialLinks: [{network: String, link: String}],
+    socialLinks: [{ network: String, link: String }],
     languages: [String],
     paymentLink: String
 
