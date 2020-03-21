@@ -27,12 +27,8 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');
 var usersRouter = require('./routes/users');
-<<<<<<< HEAD
-var groupsRouter = require('./routes/groups');
 var profileRouter = require('./routes/profile');
-=======
 var groupsRouter = require('./routes/group');
->>>>>>> 955c2f5e5d91c9f6dcf1ef8f3abe68157cc87351
 
 var User = require('./models/User.model');
 var Participant = require('./models/Participant.model');
