@@ -90,11 +90,12 @@ exports.delete = (req, res) => {
       if (!event) {
         return eventNotFoundByIdResponse(req, res, event);
       }
-      console.log("Event deleted", response);
+      console.log("Event deleted", res);
       req.flash("success", "Event wurde erfolgreich gelöscht");
-      findAll(req, res);
+      return res.redirect(303, "/events");
     })
     .catch(err => {
+      console.log("Event not deleted", err);
       if (err.kind === "ObjectId" || err.name === "NotFound") {
         return res.status(404).send({
           message: "event not found with id " + req.params.id

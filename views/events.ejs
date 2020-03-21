@@ -133,6 +133,7 @@
                             <th scope="col">Start</th>
                             <th scope="col">Ende</th>
                             <th scope="col">Beschreibung</th>
+                            <th scope="col">Aktionen</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,6 +145,9 @@
                             <td><%= moment(events[i].startDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= events[i].description %></td>
+                            <td>
+                                <a class="btn btn-danger delete" onclick="return alert('Bist du sicher?')" href="../events/delete/<%=events[i]._id%>">Delete</a>
+                            </td>
                         </tr>
                         <% } %>
                         <% } %>
@@ -183,17 +187,17 @@
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item mr-3">
                             <a href="#">
-                                <i class="fab fa-facebook fa-2x fa-fw"></i>
+                                <em class="fab fa-facebook fa-2x fa-fw"></em>
                             </a>
                         </li>
                         <li class="list-inline-item mr-3">
                             <a href="#">
-                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                                <em class="fab fa-twitter-square fa-2x fa-fw"></em>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fab fa-instagram fa-2x fa-fw"></i>
+                                <em class="fab fa-instagram fa-2x fa-fw"></em>
                             </a>
                         </li>
                     </ul>

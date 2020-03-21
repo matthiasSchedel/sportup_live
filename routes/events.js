@@ -12,6 +12,6 @@ router.get('/:id', EventService.findOne);
 // Update a event with id
 router.put('/:id', EventService.update);
 // Delete a event with id
-router.delete('/:id', EventService.delete);
+router.get('/delete/:id', EventService.delete);
 
 module.exports = router;
