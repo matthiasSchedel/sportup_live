@@ -11,16 +11,16 @@
   <title>Sportup Live</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
     type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="css/landing-page.min.css" rel="stylesheet">
+  <link href="/css/landing-page.min.css" rel="stylesheet">
 
 </head>
 
@@ -46,41 +46,69 @@
           <h1 class="mb-5">Sportup is great</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <!-- <form>
-            <div class="form-row"> -->
-          <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div> -->
-          <div class="col-12 col-md-9 mb-2 mb-md-0">
-            <button type=" submit" class="btn btn-block btn-lg btn-primary">Loslegen</button>
-          </div>
-          <!-- </div>
-          </form> -->
+          <strong><%= group.name %></strong>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="features-icons bg-light text-center">
+  <section>
     <div class="container">
       <div class="row">
-        <% for(var i=0; i<groups.length; i++) {%>
-        <div class="col-lg-3">
-          <a href="/group/<%- encodeURI(groups[i].name) %>">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
-            </div>
-            <h3><%= groups[i].name %></h3>
-            <p class="lead mb-0"><%= groups[i].description %></p>
-          </div>
-        </a>
+        <div class="col-12">
+          <nav class="navbar">
+            <a href="/group"><span class="nav-item"><i class="fa fa-arrow-circle-left"></i> Back to overview</span></a>
+          </nav>
         </div>
-        <% } %>
       </div>
     </div>
   </section>
-  
+
+  <section class="features-icons bg-light text-center showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="<%= group.picture %>" class="img-fluid" />
+        </div>
+        <div class="col-lg-6">
+          <h2><%= group.name %></h2>
+          <div class="mt-5 text-left">
+            <h3>Trainer</h3>
+            <ul class="list-group">
+              <% for(var i=0; i<group.trainers.length; i++) {%>
+              <li class="list-group-item"><i class="fa fa-user"></i> <%= group.trainers[i].name %></li>
+              <li class="list-group-item"><i class="fa fa-user"></i> Kai</li>
+              <% } %>
+            </ul>
+          </div>
+          <div class="mt-5 text-left">
+            <h3>Teilnehmer</h3>
+            <i class="fa fa-id-card"></i> <%= group.participants.length %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+    </div>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-9 text-left">
+          <h3>Beschreibung</h3>
+          <p><%= group.description %></p>
+        </div>
+        <div class="col-12 col-md-9 mb-2 mb-md-0 col-lg-3 float-lg-right">
+          <form action="" method="POST">
+            <button type="submit" class="btn btn-block btn-lg btn-primary">
+              <%- isJoined ? 'Gruppe verlassen' : 'Gruppe beitreten' %>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer bg-light">
     <div class="container">
       <div class="row">

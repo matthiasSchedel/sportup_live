@@ -28,3 +28,4 @@ services:
       - ./views:/usr/src/app/views
       - ./public:/usr/src/app/public
       - ./routes:/usr/src/app/routes
+      - ./services:/usr/src/app/services
