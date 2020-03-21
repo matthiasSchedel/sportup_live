@@ -141,8 +141,8 @@
                         <tr>
                             <th scope="row"><%= i %></th>
                             <td><%= events[i].name %></td>
-                            <td><%= events[i].startDate %></td>
-                            <td><%= events[i].endDate %></td>
+                            <td><%= moment(events[i].startDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
+                            <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= events[i].description %></td>
                         </tr>
                         <% } %>

@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var Event = require("../models/Event.model");
 const mongoose = require("mongoose");
+var moment = require("moment");
 
 /* GET users listing. */
 router.get("/", function(req, res, next) {
@@ -35,6 +36,6 @@ module.exports = router;
 
 function indexEvent(res) {
   Event.find({}, function(error, result) {
-    res.render("events", { events: result });
+    res.render("events", { events: result, moment: moment });
   });
 }
