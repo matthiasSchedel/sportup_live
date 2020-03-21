@@ -2,6 +2,7 @@ version: "2"
 services:
   mongo:
     image: mongo
+
   sportup:
     image: node
     # restart: always
