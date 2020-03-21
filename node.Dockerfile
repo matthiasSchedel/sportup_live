@@ -16,6 +16,8 @@ COPY routes /usr/src/app/routes
 RUN npm i npm@latest -g
 RUN npm install # --quiet
 RUN npm install -g nodemon
+RUN npm install express-flash
+RUN npm install express-session
 RUN ls /usr/src/app
 RUN ls /usr/src/app/ejs
 # RUN npm start #--quiet
