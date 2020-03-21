@@ -2,7 +2,12 @@ version: "2"
 services:
   mongo:
     image: mongo
-
+    environment:      
+      MONGO_INITDB_DATABASE: sportup
+    ports: 
+        - "27017:27017"
+    volumes:
+        - ./dump/testdata.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
   sportup:
     image: node
     # restart: always
