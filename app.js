@@ -27,6 +27,7 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');
 var usersRouter = require('./routes/users');
+var profileRouter = require('./routes/profile');
 var groupsRouter = require('./routes/group');
 
 var User = require('./models/User.model');
@@ -166,7 +167,7 @@ app.use('/terms-of-use', termsOfUsePageRouter);
 app.use('/contact', contactPageRouter);
 app.use('/about', aboutPageRouter);
 app.use('/groups', groupsRouter);
-
+app.use('/profile', profileRouter);
 
 
 

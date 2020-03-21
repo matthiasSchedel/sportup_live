@@ -5,11 +5,11 @@ var Schema = mongoose.Schema,
 // const ObjectId = mongoose.Types.ObjectId();
 // console.log('ObjectId type', mongoose.Types.ObjectId.name)
 const userSchema = new mongoose.Schema({
-    _id: ObjectId,
+    _id: mongoose.Types.ObjectId,
     name: String,
     email: String,
-    friends: [{ user: ObjectId, name: String }],
-    acceptedGDPR: [{ acceptedDate: Date, acceptedVersion: String }],
+    friends: [{ user: mongoose.Types.ObjectId, name: String}],
+    acceptedGDPR: [{acceptedDate: Date, acceptedVersion: String}],
     profilePic: String,
     passwordHash: String,
 
