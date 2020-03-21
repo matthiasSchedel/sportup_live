@@ -1,4 +1,4 @@
-db = db.getSiblingDB("sportup")
+db = db.getSiblingDB(process.env.MONGO_INITDB_DATABASE)
 db.events.remove({})
 db.users.remove({})
 db.trainers.remove({})

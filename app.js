@@ -31,11 +31,13 @@ var Group = require('./models/Group.model');
 var Event = require('./models/Event.model');
 var Trainer = require('./models/Trainer.model');
 
-mongoose.connect('mongodb://' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@0.0.0.0:27017/' + process.env.MONGO_INITDB_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
+// ' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@
+// mongoose.connect('mongodb://' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@localhost:27017/' + process.env.MONGO_INITDB_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://mongo:27017/' + process.env.MONGO_INITDB_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
 var app = express();
 
 
-mongoose.connect('mongodb://mongo:27017/sportup', { useNewUrlParser: true });
+// mongoose.connect('mongodb://mongo:27017/sportup', { useNewUrlParser: true });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -83,6 +85,7 @@ passport.use('signup-local', new LocalStrategy({
     if (err) return next(err);
     if (user) return next({ message: "Benutzer existiert bereits" });
     let newUser = new User({
+      _id: mongoose.Types.ObjectId(),
       name: "",
       email: email,
       passwordHash: bcrypt.hashSync(password, 10),
@@ -114,6 +117,11 @@ app.get('/logout', function (req, res, next)
 {
   req.logout();
   res.redirect('/');
+});
+
+app.get('/index.html', function (req, res, next)
+{
+  res.redirect('/main');
 });
 
 

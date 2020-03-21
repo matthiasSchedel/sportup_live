@@ -3,13 +3,16 @@ services:
   mongo:
     image: mongo
     environment:
-      - MONGO_INITDB_ROOT_USERNAME="${MONGO_INITDB_ROOT_USERNAME}"
-      - MONGO_INITDB_ROOT_PASSWORD="${MONGO_INITDB_ROOT_PASSWORD}"
-      - MONGO_INITDB_DATABASE="${MONGO_INITDB_DATABASE}"
+      # - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      # - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
     ports:
       - "27017:27017"
     volumes:
       - ./dump/testdata.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - /data/db:/data/db
+    networks:
+      - backend
   sportup:
     image: node
     # restart: always
@@ -18,13 +21,15 @@ services:
       dockerfile: node.Dockerfile
     links:
       - mongo
+    depends_on:
+      - mongo
     ports:
       - "3000:3000"
     environment:
       - EXPRESS_SESSION_SECRET="my secret"
-      - MONGO_INITDB_ROOT_USERNAME="${MONGO_INITDB_ROOT_USERNAME}"
-      - MONGO_INITDB_ROOT_PASSWORD="${MONGO_INITDB_ROOT_PASSWORD}"
-      - MONGO_INITDB_DATABASE="${MONGO_INITDB_DATABASE}"
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
     volumes:
       - ./app.js:/usr/src/app/app.js
       - ./index.js:/usr/src/app/index.js
@@ -33,3 +38,8 @@ services:
       - ./views:/usr/src/app/views
       - ./public:/usr/src/app/public
       - ./routes:/usr/src/app/routes
+    networks:
+      - backend
+networks:
+  backend:
+    driver: "bridge"
