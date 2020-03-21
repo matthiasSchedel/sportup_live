@@ -6,7 +6,7 @@ db.participants.remove({})
 db.groups.remove({})
 
 db.events.insert({
-    _id: 100,
+    _id: new ObjectId("000000000000000000000100"),
     name: "Workout 1",
     startDate: new Date("2020-03-22T15:00:00"),
     startDate: new Date("2020-03-22T16:00:00"),
@@ -14,13 +14,13 @@ db.events.insert({
     categories: ["Beweglichkeit"],
     difficulty: "Leicht",
     location: "Frankfurt",
-    trainer: 1,
+    trainer: new ObjectId("000000000000000000000001"),
     language: "de",
     participants: [{
-            user: 2,
+            user: new ObjectId("000000000000000000000002"),
             name: "Janine"
         }, {
-            user: 4,
+            user: new ObjectId("000000000000000000000004"),
             name: "Ryan"
         }
     ],
@@ -29,18 +29,18 @@ db.events.insert({
     sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     paymentLink: "https://paypal.me",
     ratings: [{
-        user: 2,
+        user: new ObjectId("000000000000000000000002"),
         rating: 5,
         comment: "Super training"
     }, {
-        user: 4,
+        user: new ObjectId("000000000000000000000002"),
         rating: 2,
         comment: "Geht so"
     }],    
 })
 
 db.events.insert({
-    _id: 101,
+    _id: new ObjectId("000000000000000000000101"),
     name: "Workout 2",
     startDate: new Date("2020-03-22T17:30:00"),
     startDate: new Date("2020-03-22T19:00:00"),
@@ -51,13 +51,13 @@ db.events.insert({
     trainer: 5,
     language: "de",
     participants: [{
-            user: 1,
+            user: new ObjectId("000000000000000000000001"),
             name: "Peter",
         }, {
-            user: 2,
+            user: new ObjectId("000000000000000000000002"),
             name: "Janine",
         }, {
-            user: 3,
+            user: new ObjectId("000000000000000000000003"),
             name: "Kerstin",
         }
     ],
@@ -66,11 +66,11 @@ db.events.insert({
     sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     paymentLink: "https://paypal.me",
     ratings: [{
-        user: 2,
+        user: new ObjectId("000000000000000000000002"),
         rating: 4,
         comment: "Geht besser"
     }, {
-        user: 3,
+        user: new ObjectId("000000000000000000000003"),
         rating: 4,
         comment: "Top"
     }],    
@@ -78,7 +78,7 @@ db.events.insert({
 
 
 db.users.insert({
-    _id: 1,
+    _id: new ObjectId("000000000000000000000001"),
     name: "Peter",
     email: "peter_sul@mailinator.com",
     friends: [],
@@ -90,10 +90,15 @@ db.users.insert({
 })
 
 db.users.insert({
-    _id: 2,
+    _id: new ObjectId("000000000000000000000002"),
     name: "Janine",
     email: "janine_sul@mailinator.com",
-    friends: [],
+    friends: [ {
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }
+
+    ],
     acceptedGDPR: [{
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
@@ -102,7 +107,7 @@ db.users.insert({
 })
 
 db.users.insert({
-    _id: 3,
+    _id: new ObjectId("000000000000000000000003"),
     name: "Kerstin",
     email: "kerstin_sul@mailinator.com",
     friends: [],
@@ -114,7 +119,7 @@ db.users.insert({
 })
 
 db.users.insert({
-    _id: 4,
+    _id: new ObjectId("000000000000000000000004"),
     name: "Ryan",
     email: "ryan_sul@mailinator.com",
     friends: [],
@@ -126,7 +131,7 @@ db.users.insert({
 })
 
 db.users.insert({
-    _id: 5,
+    _id: new ObjectId("000000000000000000000005"),
     name: "Arnold",
     email: "Arnie_sul@mailinator.com",
     friends: [],
@@ -138,7 +143,7 @@ db.users.insert({
 })
 
 db.trainers.insert({
-    user: 1,
+    user: new ObjectId("000000000000000000000001"),
     bio: "From England, expert in drinking and knowing things",
     location: "Frankfurt",
     socialLinks: [{
@@ -152,7 +157,7 @@ db.trainers.insert({
     paymentLink: "https://paypal.me"
 })
 db.trainers.insert({
-    user: 5,
+    user: new ObjectId("000000000000000000000005"),
     bio: "Österreicher, full body workouts",
     location: "Frankfurt",
     socialLinks: [{
@@ -167,62 +172,62 @@ db.trainers.insert({
 })
 
 db.participants.insert({
-    user: 2,
+    user: new ObjectId("000000000000000000000002"),
     events: [{
-        event: 100,
+        event: new ObjectId("000000000000000000000100"),
         name: "Workout 1",
         startDate: new Date("2020-03-22T15:00:00")
     }, {
-        event: 101,
+        event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
         startDate: new Date("2020-03-22T17:30:00")        
     }],
     groups: [{
-        group: 200,
+        group: new ObjectId("000000000000000000000200"),
         name: "Frühsportis"
     }]
 
 })
 
 db.participants.insert({
-    user: 1,
+    user: new ObjectId("000000000000000000000001"),
     events: [{
-        event: 101,
+        event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
         startDate: new Date("2020-03-22T17:30:00")        
     }]
 })
 
 db.participants.insert({
-    user: 3,
+    user: new ObjectId("000000000000000000000003"),
     events: [{
-        event: 101,
+        event: new ObjectId("000000000000000000000101"),
         name: "Workout 2",
         startDate: new Date("2020-03-22T17:30:00")        
     }]
 })
 
 db.participants.insert({
-    user: 4,
+    user: new ObjectId("000000000000000000000004"),
     events: [{
-        event: 100,
+        event: new ObjectId("000000000000000000000100"),
         name: "Workout 1",
         startDate: new Date("2020-03-22T15:00:00")       
     }]
 })
 
 db.groups.insert({
-    _id: 200,
+    _id: new ObjectId("000000000000000000000200"),
     name: "Frühsportis",
     trainers: [{
-        user: 1,
+        user: new ObjectId("000000000000000000000001"),
         name: "Peter"
     }],
     participants: [{
-        user: 2,
+        user: new ObjectId("000000000000000000000002"),
         name: "Janine"
     }, {
-        user: 5,
+        user: new ObjectId("000000000000000000000005"),
         name: "Arnold"
     }],
     description: "Gruppe für Sport ab 6",
