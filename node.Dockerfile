@@ -6,8 +6,6 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package.json /usr/src/app/
-COPY bin /usr/src/app/bin
-COPY ejs /usr/src/app/ejs
 COPY public /usr/src/app/public
 COPY views /usr/src/app/views
 COPY routes /usr/src/app/routes
