@@ -1,4 +1,4 @@
-db = db.getSiblingDB("sportup")
+db = db.getSiblingDB(process.env.MONGO_INITDB_DATABASE)
 db.events.remove({})
 db.users.remove({})
 db.trainers.remove({})
@@ -17,12 +17,12 @@ db.events.insert({
     trainer: 1,
     language: "de",
     participants: [{
-            user: 2,
-            name: "Janine"
-        }, {
-            user: 4,
-            name: "Ryan"
-        }
+        user: 2,
+        name: "Janine"
+    }, {
+        user: 4,
+        name: "Ryan"
+    }
     ],
     comments: [],
     description: "Workout number 1",
@@ -36,7 +36,7 @@ db.events.insert({
         user: 4,
         rating: 2,
         comment: "Geht so"
-    }],    
+    }],
 })
 
 db.events.insert({
@@ -51,15 +51,15 @@ db.events.insert({
     trainer: 5,
     language: "de",
     participants: [{
-            user: 1,
-            name: "Peter",
-        }, {
-            user: 2,
-            name: "Janine",
-        }, {
-            user: 3,
-            name: "Kerstin",
-        }
+        user: 1,
+        name: "Peter",
+    }, {
+        user: 2,
+        name: "Janine",
+    }, {
+        user: 3,
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Workout number 2",
@@ -73,7 +73,7 @@ db.events.insert({
         user: 3,
         rating: 4,
         comment: "Top"
-    }],    
+    }],
 })
 
 
@@ -146,7 +146,7 @@ db.trainers.insert({
         link: "https://facebook.com/"
     }, {
         network: "instagram",
-        link: "https://instagram.com/" 
+        link: "https://instagram.com/"
     }],
     languages: ["de"],
     paymentLink: "https://paypal.me"
@@ -160,7 +160,7 @@ db.trainers.insert({
         link: "https://facebook.com/"
     }, {
         network: "instagram",
-        link: "https://instagram.com/" 
+        link: "https://instagram.com/"
     }],
     languages: ["de", "at"],
     paymentLink: "https://paypal.me"
@@ -175,7 +175,7 @@ db.participants.insert({
     }, {
         event: 101,
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }],
     groups: [{
         group: 200,
@@ -189,7 +189,7 @@ db.participants.insert({
     events: [{
         event: 101,
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }]
 })
 
@@ -198,7 +198,7 @@ db.participants.insert({
     events: [{
         event: 101,
         name: "Workout 2",
-        startDate: new Date("2020-03-22T17:30:00")        
+        startDate: new Date("2020-03-22T17:30:00")
     }]
 })
 
@@ -207,7 +207,7 @@ db.participants.insert({
     events: [{
         event: 100,
         name: "Workout 1",
-        startDate: new Date("2020-03-22T15:00:00")       
+        startDate: new Date("2020-03-22T15:00:00")
     }]
 })
 
