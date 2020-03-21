@@ -1,10 +1,10 @@
 // User.model.js
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
-    _id: ObjectId,
+    _id: mongoose.Types.ObjectId,
     name: String,
     email: String,
-    friends: [{ user: ObjectId, name: String}],
+    friends: [{ user: mongoose.Types.ObjectId, name: String}],
     acceptedGDPR: [{acceptedDate: Date, acceptedVersion: String}],
     profilePic: String,
     passwordHash: String,
