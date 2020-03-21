@@ -12,7 +12,7 @@ const eventSchema = new mongoose.Schema({
     category: [String],
     difficulty: String,
     location: String,
-    trainer: ObjectId,
+    trainer: mongoose.Types.ObjectId,
     language: String,
     participants: [{ user: ObjectId, name: String, hasPayed: Boolean }],
     comments: [{ user: ObjectId, name: String, text: String, date: Date }],
