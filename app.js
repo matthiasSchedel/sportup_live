@@ -23,7 +23,7 @@ var contactPageRouter = require('./routes/contact');
 var mongoose = require("mongoose");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var groupsRouter = require('./routes/groups');
+var groupsRouter = require('./routes/group');
 
 var User = require('./models/User.model');
 var Participant = require('./models/Participant.model');
@@ -142,6 +142,7 @@ app.post('/signup',
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.use('/login-page', loginPageRouter);
 app.use('/signup-page', signupPageRouter);
 app.use('/main', mainPageRouter);
@@ -150,6 +151,7 @@ app.use('/terms-of-use', termsOfUsePageRouter);
 app.use('/contact', contactPageRouter);
 app.use('/about', aboutPageRouter);
 app.use('/groups', groupsRouter);
+
 
 
 
