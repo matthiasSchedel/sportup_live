@@ -21,7 +21,7 @@ router.post("/", function(req, res, next) {
   event.save().then(
     response => {
       console.log("Event Saved", response);
-      req.flash("error", "Event wurde erfolgrech gespeichert");
+      req.flash("error", "Event wurde erfolgreich gespeichert");
       indexEvent(res);
     },
     error => {
