@@ -2,7 +2,12 @@ version: "2"
 services:
   mongo:
     image: mongo
-
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME="${MONGO_INITDB_ROOT_USERNAME}"
+      - MONGO_INITDB_ROOT_PASSWORD="${MONGO_INITDB_ROOT_PASSWORD}"
+      - MONGO_INITDB_DATABASE="${MONGO_INITDB_DATABASE}"
+    ports:
+      - "27017:27017"
   sportup:
     image: node
     # restart: always
@@ -15,6 +20,9 @@ services:
       - "3000:3000"
     environment:
       - EXPRESS_SESSION_SECRET="my secret"
+      - MONGO_INITDB_ROOT_USERNAME="${MONGO_INITDB_ROOT_USERNAME}"
+      - MONGO_INITDB_ROOT_PASSWORD="${MONGO_INITDB_ROOT_PASSWORD}"
+      - MONGO_INITDB_DATABASE="${MONGO_INITDB_DATABASE}"
     volumes:
       - ./app.js:/usr/src/app/app.js
       - ./index.js:/usr/src/app/index.js
