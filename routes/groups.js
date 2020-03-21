@@ -4,9 +4,10 @@ var Group = require('../models/Group.model')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  const groups = Group.find();
-  console.log("jfjfjf", groups);
-  res.render('groups', { groups: groups });
+  Group.find({}, function(error, result ) {
+    console.log("Group result", result);
+    res.render('groups', { groups: result });
+  });
 });
 
 module.exports = router;

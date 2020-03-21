@@ -4,8 +4,10 @@ services:
     image: mongo
     environment:      
       MONGO_INITDB_DATABASE: sportup
+    ports: 
+        - "27017:27017"
     volumes:
-        - ./models/testdata.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+        - ./dump/testdata.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
   sportup:
     build:
