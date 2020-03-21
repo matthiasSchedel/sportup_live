@@ -5,13 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var flash = require('express-flash');
 var session = require('express-session');
-
+var mongoose = require("mongoose");
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');
 var usersRouter = require('./routes/users');
+var groupsRouter = require('./routes/groups');
 
 var app = express();
 
+
+mongoose.connect('mongodb://mongo:27017/sportup', {useNewUrlParser: true});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,6 +37,9 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/events', eventsRouter);
 app.use('/users', usersRouter);
+app.use('/groups', groupsRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next)
