@@ -6,18 +6,17 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package.json /usr/src/app/
-COPY bin /usr/src/app/bin
-COPY ejs /usr/src/app/ejs
+# COPY bin /usr/src/app/bin
+# COPY ejs /usr/src/app/ejs
 COPY public /usr/src/app/public
 COPY views /usr/src/app/views
 COPY routes /usr/src/app/routes
 
-
 RUN npm i npm@latest -g
 RUN npm install # --quiet
 RUN npm install -g nodemon
-RUN ls /usr/src/app
-RUN ls /usr/src/app/ejs
+# RUN ls /usr/src/app
+# RUN ls /usr/src/app/ejs
 # RUN npm start #--quiet
 
 EXPOSE 3000
