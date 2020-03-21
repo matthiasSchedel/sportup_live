@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
 
 var bcrypt = require('bcrypt');
 var expressSession = require('express-session');
@@ -21,6 +20,10 @@ var aboutPageRouter = require('./routes/about');
 var contactPageRouter = require('./routes/contact');
 
 
+var mongoose = require("mongoose");
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var groupsRouter = require('./routes/groups');
 
 var User = require('./models/User.model');
 var Participant = require('./models/Participant.model');
@@ -31,6 +34,8 @@ var Trainer = require('./models/Trainer.model');
 mongoose.connect('mongodb://' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@0.0.0.0:27017/' + process.env.MONGO_INITDB_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
 var app = express();
 
+
+mongoose.connect('mongodb://mongo:27017/sportup', { useNewUrlParser: true });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -136,6 +141,9 @@ app.use('/privacy-policy', privacyPolicyPageRouter);
 app.use('/terms-of-use', termsOfUsePageRouter);
 app.use('/contact', contactPageRouter);
 app.use('/about', aboutPageRouter);
+app.use('/groups', groupsRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next)
