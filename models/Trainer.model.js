@@ -5,8 +5,7 @@ const trainerSchema = new mongoose.Schema({
     bio: String,
     location: String,
     socialLinks: [{network: String, link: String}],
-    language: String,
-    ratings: [{user: ObjectId, value: Number, comment: String}],
+    languages: [String],
     paymentLink: String
 
 });

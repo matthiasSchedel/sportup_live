@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
     email: String,
     friends: [{ user: ObjectId, name: String}],
     acceptedGDPR: [{acceptedDate: Date, acceptedVersion: String}],
-    profilePic: String
+    profilePic: String,
+    passwordHash: String,
 
 });
 const User = mongoose.model("User", userSchema);

@@ -6,7 +6,7 @@ const eventSchema = new mongoose.Schema({
     startDate: Date,    
     endDate: Date,
     tags: [String],
-    category: String,
+    category: [String],
     difficulty: String,
     location: String,
     trainer: ObjectId,
@@ -15,8 +15,8 @@ const eventSchema = new mongoose.Schema({
     comments: [{user: ObjectId, name: String, text: String, date: Date}],
     description: String,
     sessionLink: String,
-    paymentLink: String
-
+    paymentLink: String,
+    rating: [{user: ObjectId, value: Number, comment: String}],
 });
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;
