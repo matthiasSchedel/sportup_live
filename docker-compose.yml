@@ -2,6 +2,11 @@ version: "2"
 services:
   mongo:
     image: mongo
+    environment:      
+      MONGO_INITDB_DATABASE: sportup
+    volumes:
+        - ./models/testdata.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
   sportup:
     build:
       context: .
