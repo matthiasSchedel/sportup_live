@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 const trainerSchema = new mongoose.Schema({
-    user: mongoose.Types.ObjectId,
+    user: ObjectId,
     bio: String,
     location: String,
     socialLinks: [{ network: String, link: String }],
