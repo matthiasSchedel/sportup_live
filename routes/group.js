@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.post('/:id', function (req, res, next) {
+router.post('/:id', async function (req, res, next) {
   await GroupService.changeGroupState(req.params.id, req.session.user._id, "")
   res.redirect('/group/' + req.params.id);
 })
@@ -20,7 +20,7 @@ router.get('/:id', async function (req, res, next) {
   var groups = await GroupService.findOne(req.params.id)
   let isJoined = false;
     if (req.session.user) {
-      isJoined = await GroupService.isJoined(result._id, req.session.user._id)
+      isJoined = await GroupService.isJoined(req.params.id, req.session.user._id)
     }
   res.render("group", { group: groups, isJoined: isJoined, moment });
 });
