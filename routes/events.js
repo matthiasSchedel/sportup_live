@@ -6,7 +6,7 @@ var EventService = require("../services/eventService");
 // Retrieve all events
 router.get("/", async function(req, res, next) {
     try {
-        var events = await EventService.getEvents({})
+        var events = await EventService.get({})
         res.render("events", { events: events, moment: moment });
     } catch (e) {
         req.flash("error", "Fehler beim event laden");
@@ -17,8 +17,8 @@ router.get("/", async function(req, res, next) {
 // Create a new event
 router.post("/", async function(req, res, next) {
     try {
-        await EventService.createEvent(req)
-        var events = await EventService.getEvents({})
+        await EventService.create(req)
+        var events = await EventService.get({})
         res.render("events", { events: events, moment: moment });
     } catch (e) {
         req.flash("error", "Fehler beim event erstellen");
