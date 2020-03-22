@@ -127,14 +127,17 @@
       <div class="row">
         <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
           <div class="MultiCarousel-inner">
-            <div class="item">
-              <div class="pad15">
-                <p class="lead">Multi Item Carousel</p>
-                <p>₹ 1</p>
-                <p>₹ 6000</p>
-                <p>50% off</p>
-              </div>
-            </div>
+              <% if (locals.groups) { %>
+              <% for(var i=0; i<groups.length; i++) {%>
+                <div class="item">
+                  <div class="pad15">
+                    <p class="lead"><%= groups[i].name %></p>
+                    <p><%= groups[i].description %></p>
+                    <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+                  </div>
+                </div>
+              <% } %>
+              <% } %>
             <div class="item">
               <div class="pad15">
                 <p class="lead">Multi Item Carousel</p>
