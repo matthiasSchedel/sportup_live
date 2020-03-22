@@ -37,21 +37,23 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fa fa-chalkboard-teacher m-auto text-primary"></i>
+          <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="d-flex">
+              <!-- <i class="fa fa-chalkboard-teacher m-auto text-primary"></i> -->
+              <img class="img-thumbnail" alt="trainer" src="img/woman-exercising-bear-body-of-water-1300526.jpg" />
             </div>
             <h3>Für Trainer</h3>
-            <p class="lead mb-0">Erstellt in Sportup Live ganz einfach einen Kalender mit all euren geplanten
+            <p class="lead mb-0">Erstellt in SportUp Live ganz einfach einen Kalender mit all euren geplanten
               Livestreams
               und gebt
               ein, wie die Teilnehmer euch für den virtuellen Kurs bezahlen können.</p>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fa fa-running m-auto text-primary"></i>
+          <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="d-flex">
+              <!-- <i class="fa fa-running m-auto text-primary"></i> -->
+              <img class="img-thumbnail" alt="trainer" src="img/group-of-woman-in-yoga-class-866021.jpg" />              
             </div>
             <h3>Für Sportbegeisterte</h3>
             <p class="lead mb-0">In der Kalenderfunktion findet ihr alle Livestreams der teilnehmenden Trainer.
@@ -77,7 +79,11 @@
             <% for(var i=0; i<groups.length; i++) {%>
             <div class="item">
               <div class="pad15">
-                <h5><%= groups[i].name %></h5>
+                <a href="/group/<%- encodeURI(groups[i]._id) %>">
+                  <div>
+                    <h5><%= groups[i].name %></h5>
+                  </div>
+                </a>
                 <p><%= groups[i].description %></p>
                 <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
@@ -103,9 +109,14 @@
             <% for(var i=0; i<events.length; i++) {%>
             <div class="item">
               <div class="pad15">
-                <h5><%= events[i].name %></h5>
-                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %></p>
+                <a href="/events/<%- encodeURI(events[i].id) %>">
+                  <div>
+                    <h5><%= events[i].name %></h5>
+                  </div>
+                </a>
+                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
                 <p><%= events[i].description %></p>
+                <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>

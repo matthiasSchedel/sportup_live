@@ -16,10 +16,12 @@ const eventSchema = new mongoose.Schema({
     language: String,
     participants: [{ user: mongoose.Types.ObjectId, name: String, hasPayed: Boolean}],
     comments: [{user: mongoose.Types.ObjectId, name: String, text: String, date: Date}],
+    groups: [{group: mongoose.Types.ObjectId, name: String}],
     description: String,
     sessionLink: String,
     paymentLink: String,
     rating: [{user: mongoose.Types.ObjectId, value: Number, comment: String}],
+    picture: String,
 });
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;

@@ -41,7 +41,7 @@ header.main {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/sportup_3_facebook.png") no-repeat center center;
+  background: url("../img/image.png") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -54,7 +54,7 @@ header.masthead .overlay {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.0;
 }
 
 header.masthead h1 {

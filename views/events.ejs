@@ -32,8 +32,54 @@
 
 
 
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <% if (messages.success) { %>
+            <div class="alert alert-success" role="alert"><%- messages.success %></div>
+            <% } %>
 
-    <%- include('partials/events-partial') %>
+            <% if (messages.error) { %>
+            <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+            <% } %>
+            <div class="row">
+
+                <%- include('partials/createAndUpdateEvent-form') %>
+
+                <table class="table">
+                    <caption>List of events</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Start</th>
+                            <th scope="col">Ende</th>
+                            <th scope="col">Beschreibung</th>
+                            <th scope="col">Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (locals.events) { %>
+                        <% for(var i=0; i<events.length; i++) {%>
+                        <tr>
+                            <th scope="row"><%= i %></th>
+                            <td><a href="/events/<%- encodeURI(events[i].id) %>"><%= events[i].name %></a> </td>
+                            <td><%= moment(events[i].startDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
+                            <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
+                            <td><%= events[i].description %></td>
+                            <td>
+                                <a class="btn btn-danger delete" onclick="return alert('Bist du sicher?')"
+                                    href="../events/delete/<%=events[i]._id%>">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
     <%- include('partials/footer') %>
 

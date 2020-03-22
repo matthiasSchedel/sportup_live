@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var moment = require("moment");
 var EventService = require("../services/eventService");
+var GroupService = require("../services/groupService");
 
 // Retrieve all events
 router.get("/", async function(req, res, next) {
@@ -17,10 +18,21 @@ router.get("/", async function(req, res, next) {
 // Create a new event
 router.post("/", async function(req, res, next) {
     try {
-        await EventService.create(req)
-        var events = await EventService.get({})
-        res.render("events", { events: events, moment: moment });
+        let body = req.body
+        console.log(req.body)
+        if (body.groupId) {
+            body.groups = await GroupService.findOne(body.groupId)
+            console.log('found group' + body.groups);
+        }
+        let event = await EventService.create(body)
+        console.log(event);
+        // update group
+        let group = await GroupService.addEventToGroup(body.groups.id, event)
+        console.log('updated group' + group);
+
+        res.render("event", { event: event, moment: moment });
     } catch (e) {
+        console.log(e)
         req.flash("error", "Fehler beim event erstellen");
         res.render("events", { events: [], moment: moment });
     }
@@ -30,6 +42,7 @@ router.post("/", async function(req, res, next) {
 router.get("/:id", async function(req, res, next) {
     try {
         var event = await EventService.findOne(req)
+        console.log(event);
         res.render("event", { event: event, moment: moment });
     } catch (e) {
         req.flash("error", "Fehler beim event laden");

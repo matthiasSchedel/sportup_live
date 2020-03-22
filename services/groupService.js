@@ -18,9 +18,9 @@ exports.get = async function(query) {
   }
 };
 
-exports.create = async function(req) {
+exports.create = async function(body) {
   try {
-    var group = assignParamsToModel(req);
+    var group = assignParamsToModel(body);
     return await group.save();
   } catch (e) {
     // Log Errors
@@ -29,10 +29,55 @@ exports.create = async function(req) {
   }
 };
 
-function assignParamsToModel(req) {
+exports.update = async function(body) {
+    try {
+      return await Group.findByIdAndUpdate(
+        body._id,
+        assignParamsToModel(body),
+        { new: true, useFindAndModify: false }
+      );
+    } catch (e) {
+      // Log Errors
+      console.log(e);
+      throw Error("Error while Updating Group");
+    }
+  };
+
+exports.addEventToGroup = async function(groupId, event) {
+    try {
+      return await Group.update( 
+        { _id: groupId }, 
+        { $addToSet: { events: event } }
+      )
+    } catch (e) {
+      // Log Errors
+      console.log(e);
+      throw Error("Error while Updating Group");
+    }
+  };
+
+exports.findOne = async function(_id) {
+    try {
+      let groups = await Group.find({_id});
+      if (groups.length > 0) {
+          return groups[0]; 
+      }
+      throw Error("No group found");
+    } catch (e) {
+      // Log Errors
+      console.log(e);
+      throw Error("Error while Getting Group");
+    }
+  };
+
+function assignParamsToModel(body) {
   return new Group({
-    name: req.body.name,
-    description: req.body.description,
-    picture: req.body.picture,
+    name: body.name,
+    trainers: body.trainers,
+    participants: body.participants,
+    description: body.description,
+    picture: body.picture,
+    events: body.events,
   });
 }
+
