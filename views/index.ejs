@@ -113,26 +113,24 @@
       </div>
     </div>
 
-      <div class="container">
-        <div class="col-xl-9  mt-8">
-          <h3 class="mb-3 mt-8">Events</h3>
-          <h6 class="mb-2">Et dolor ea elit sit eu irure esse in magna elit aliqua commodo ut.</h6>
-        </div>
-        <div class="row">
-          <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
-            <div class="MultiCarousel-inner">             
-              <% if (locals.events) { %>
-              <% for(var i=0; i<events.length; i++) {%>
-              <div class="item">
-                <div class="pad15">
-                  <p class="lead"><%= events[i].name %></p>
-                  <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
-                    <p><%= events[i].description %></p>
-                </div>
+    <div class="container">
+      <div class="col-xl-9  mt-8">
+        <h3 class="mb-3 mt-8"><a href="/events">Events</a></h3>
+      </div>
+      <div class="row">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+          <div class="MultiCarousel-inner">
+            <% if (locals.events) { %>
+            <% for(var i=0; i<events.length; i++) {%>
+            <div class="item">
+              <div class="pad15">
+                <h5><%= events[i].name %></h5>
+                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %></p>
+                <p><%= events[i].description %></p>
               </div>
-              <% } %>
-              <% } %>              
-            </div>            
+            </div>
+            <% } %>
+            <% } %>
           </div>
           <button class="btn btn-primary leftLst">
             <i class="fa fa-chevron-left"></i> </button>
