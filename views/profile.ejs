@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Sportup Live</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><b>Sportup</b> Live</a>
+      <div class="col-12 col-md-3">
+        <a class="btn btn-primary" href="#">Registrierung</a>
+        <a class="btn btn-primary" href="#">Login</a>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- User profile -->
+<div class="container">
+  <% if (user) { %>
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <h2>Hallo <%= user.name %></h2>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <img alt="profile picture" class="img-thumbnail" src=<%= user.profilePic %> />
+      </div>
+    </div>      
+    <div class="row">
+      <div class="col-6 col-md-3">
+        E-Mail
+      </div>
+      <div class="col-6 col-md-3">
+        <%= user.email %>
+      </div>
+    </div>
+
+    <!-- Friends -->
+    <div class="row">
+      <div class="col-12 ">
+        <h4>Meine Freunde</h4>
+      </div>
+      
+        <% if (user.friends.length > 0) { 
+           user.friends.forEach(function(friend){ %>
+            <div class="col-2 col-md-1">
+              <%= friend.name %>
+            </div>
+        <% }); 
+           } else { %>
+            <div class="col-6 col-md-3">
+            Keine Freunde<br>
+            <img src="https://i.imgflip.com/2pu5b3.png" alt="sad kitten" class="img-thumbnail" /></br>
+            Kitty traurig.
+          </div>
+            <% } %>
+    </div>
+
+    <!-- Groups -->
+    <div class="row">
+      <div class="col-12 ">
+        <h4>Meine Gruppen</h4>
+        Kommt noch ;-)
+      </div>
+      
+    </div>
+
+    <!-- Participations -->
+    <div class="row">
+      <div class="col-12 ">
+        <h4>Anstehende Kurse</h4>
+      </div>
+      <% var comingEvents = 0 
+        if (courses.events.length > 0) { 
+        var currentDate = new Date()
+        courses.events.forEach(function(event){ 
+          if (event.startDate > currentDate) {
+            comingEvents += 1 %>
+         <div class="col-6 col-md-3">
+           <%= event.name %> @ <%= event.startDate %>
+         </div>
+     <% } 
+    }); 
+        } 
+        if (courses.events.length == 0 || comingEvents == 0 ){ %>
+         <div class="col-6 col-md-3">
+         Keine Kurse<br>
+         <img src="https://i.pinimg.com/originals/3f/1e/52/3f1e520ee2e31b4e6c6e5ba477d793df.jpg" alt="homer" class="img-thumbnail" /></br>
+         Auf geht's! Anmelden!
+       </div>
+         <% } %>
+    </div>   
+    <div class="row">
+      <div class="col-12 ">
+        <h4>Vergangene Kurse</h4>
+      </div>
+      <% var pastEvents = 0 
+        if (courses.events.length > 0) { 
+        courses.events.forEach(function(event){ 
+          if (event.startDate <= currentDate) {
+            pastEvents += 1 %>
+         <div class="col-6 col-md-3">
+           <%= event.name %> @ <%= event.startDate %>
+         </div>
+     <% } 
+    }); 
+        } 
+        if (courses.events.length == 0 || pastEvents == 0 ){ %>
+         <div class="col-6 col-md-3">
+         Keine Kurse
+       </div>
+         <% } %>
+    </div>     
+            
+  <!-- Error message and call to action login -->
+  <% } else { %>
+    <div class="row">
+      <div class="jumbotron">    
+        <h2>Du bist nicht eingeloggt!</h2>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Einloggen</a>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
