@@ -23,7 +23,7 @@ const renderGroupDetail = (req, res) => {
   Group.findOne({ name: req.params.name }, function (error, result) {
     res.render('group', {
       group: result,
-      isJoined: groupService.isJoined()
+      isJoined: GroupService.isJoined()
     });
   });
 }
