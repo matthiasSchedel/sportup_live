@@ -47,6 +47,10 @@ header.masthead {
   padding-bottom: 8rem;
 }
 
+.img-thumbnail {
+  max-height: 450px !important;
+}
+
 header.masthead .overlay {
   position: absolute;
   background-color: #212529;
