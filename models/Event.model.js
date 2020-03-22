@@ -20,6 +20,7 @@ const eventSchema = new mongoose.Schema({
     sessionLink: String,
     paymentLink: String,
     rating: [{user: mongoose.Types.ObjectId, value: Number, comment: String}],
+    picture: String,
 });
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;

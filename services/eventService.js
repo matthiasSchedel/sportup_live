@@ -25,7 +25,11 @@ exports.create = async function(req) {
 
 exports.findOne = async function(req) {
   try {
-    return await Event.find(query)(req.params.id);
+    let event = Event.find({_id:req.params.id});
+    if (event.length > 0) {
+        return event; 
+    }
+    throw Error("No event found");
   } catch (e) {
     // Log Errors
     console.log(e);
