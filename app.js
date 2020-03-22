@@ -71,8 +71,9 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy({
   usernameField: "email",
-  passwordField: "password"
-}, function (email, password, next)
+  passwordField: "password",
+  passReqToCallback: true,
+}, function (req, email, password, next)
 {
   User.findOne({
     email: email
@@ -83,6 +84,8 @@ passport.use(new LocalStrategy({
     {
       return next({ message: 'E-Mail oder Passwort falsch' })
     }
+    req.session.user = user;
+    req.session.isLoggedIn = true;
     // (async () =>
     // {
     //   let res = MailService.sendMail(user.email, user.name).then(r => r).catch(e => e);
@@ -96,25 +99,32 @@ passport.use(new LocalStrategy({
 
 passport.use('signup-local', new LocalStrategy({
   usernameField: "email",
-  passwordField: "password"
-}, function (email, password, next)
+  passwordField: "password",
+  passReqToCallback: true,
+}, function (req, email, password, next)
 {
-  console.log('signup local');
+  console.log('signup local', req.body.password);
   User.findOne({
     email: email
   }, function (err, user)
   {
+    let body = req.body;
+    // if (body.)
+    // if (req) return next({ message: JSON.stringify(req.body) });
     if (err) return next(err);
     if (user) return next({ message: "Benutzer existiert bereits" });
     let newUser = new User({
       _id: mongoose.Types.ObjectId(),
-      name: "",
+      name: body.name,
       email: email,
       passwordHash: bcrypt.hashSync(password, 10),
       friends: [],
       accecptGDPR: [{ acceptedDate: new Date(), acceptedVersion: "1" }],
-      profilePic: ""
+      profilePic: "",
+      userType: body.userType
     })
+    req.session.user = newUser;
+    req.session.isLoggedIn = true;
     newUser.save(function (err)
     {
       next(err, newUser);
@@ -137,25 +147,33 @@ passport.deserializeUser(function (id, next)
 
 app.get('/logout', function (req, res, next)
 {
+  req.session.user = null;
+  req.session.isLoggedIn = false;
   req.logout();
+
   res.redirect('/');
 });
 
-app.get('/index.html', function (req, res, next) {
+app.get('/index.html', function (req, res, next)
+{
   res.redirect('/');
 });
 
 
 app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login-page' }),
-  function (req, res) {
+  function (req, res)
+  {
+    passport.deserializeUser
     res.redirect('/main');
   });
 
 
 app.post('/signup',
+  // passport.initialize
   passport.authenticate('signup-local', { failureRedirect: '/signup-page' }),
-  function (req, res) {
+  function (req, res)
+  {
     res.redirect('/main');
   });
 
@@ -176,12 +194,14 @@ app.use('/profile', profileRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function (req, res, next)
+{
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res, next)
+{
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
