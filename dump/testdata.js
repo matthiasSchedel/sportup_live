@@ -1,4 +1,8 @@
-db = db.getSiblingDB(process.env.MONGO_INITDB_DATABASE)
+var checkDB = typeof databaseName
+if (checkDB == "undefined") {
+    databaseName = "sportupdb"  // failsafe
+}
+db = db.getSiblingDB(databaseName)
 db.events.remove({})
 db.users.remove({})
 db.trainers.remove({})

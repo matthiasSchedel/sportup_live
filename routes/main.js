@@ -1,10 +1,19 @@
 var express = require('express');
 var router = express.Router();
+var moment = require("moment");
+var EventService = require("../services/eventService");
+var GroupService = require("../services/groupService");
 
 /* GET home page. */
-router.get('/', function (req, res, next)
-{
-  res.render('main', { title: 'Übersicht' });
+router.get('/', async function (req, res, next) {
+  try {
+    var events = await EventService.get({})
+    var groups = await GroupService.get({})
+    res.render('main', { events, groups, moment });
+  } catch (e) {
+    req.flash("error", "Fehler beim event oder gruppen laden");
+    res.render("index", { events: [], moment, user: req.user });
+  }
 });
 
 module.exports = router;

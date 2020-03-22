@@ -1,133 +1,172 @@
-<!DOCTYPE html>
-<html lang="de">
+<%- include('partials/head') %>
 
-<head>
+<body>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <!-- <div class="container"> -->
+    <a class="float-left navbar-brand" href="/"><b>Sportup</b> Live</a>
+    <div class="float-right">      
+      <a class="btn btn-primary btn-lg" href="/logout">Logout</a>
+    </div>
+    <!-- </div> -->
+  </nav>
 
-  <title>Sportup Live Übersicht</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <!-- <h1 class="mb-5">Sportup is great</h1>
+          <h6 class="mb-3">Et dolor ea elit sit eu irure esse in magna elit aliqua commodo ut.</h6> -->
         </div>
-        <div class="sidebar-brand-text mx-3">Menü</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="/main">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Übersicht</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/groups">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Gruppen</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Logout</span></a>
-      </li>
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h3 mt-3 mb-4 text-gray-800"> Übersicht </h1>
-
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <!-- <form>
+            <div class="form-row"> -->
+          <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div> -->
+          <div class="col-12 col-md-12 mb-4 mb-md-0">
+            <!-- <button type=" submit" class="btn btn-block btn-lg btn-primary">Loslegen</button> -->
+            <!-- <a class="btn btn-primary btn-block btn-lg" href="/login-page">Loslegen</a> -->
+          </div>
+          <!-- </div>
+          </form> -->
         </div>
-        <!-- /.container-fluid -->
-
       </div>
-      <!-- End of Main Content -->
+    </div>
+  </header>
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+
+  <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="card-text">
+            <b>Sportup Live</b> ist eine Plattform für alle, die sich in Zeiten von Social Distancing
+            <span>gemeinsam virtuell
+              fit halten wollen</span>. Die Plattform möchten Menschen, die aktuell Ihr zu Hause nicht verlassen
+            dürfen und
+            Trainer,
+            die Kurse von zu Hause anbieten wollen, verbinden.
+            Viele Trainer haben seit der Krise alle Einnahmequellen verloren. Wir wollen dir mit dieser Plattform
+            helfen
+            auf eine einfache Weise mit deinen bisherigen Teilnehmern in Kontakt zu treten oder auch deinen Kurs für
+            eine
+            größere Gruppe zu öffnen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="fa fa-chalkboard-teacher m-auto text-primary"></i>
+            </div>
+            <h3>Für Trainer</h3>
+            <p class="lead mb-0">Erstellt in Sportup Live ganz einfach einen Kalender mit all euren geplanten
+              Livestreams
+              und gebt
+              ein, wie die Teilnehmer euch für den virtuellen Kurs bezahlen können.</p>
           </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+        <div class="col-lg-6">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="fa fa-running m-auto text-primary"></i>
+            </div>
+            <h3>Für Sportbegeisterte</h3>
+            <p class="lead mb-0">In der Kalenderfunktion findet ihr alle Livestreams der teilnehmenden Trainer.
+              Über die
+              Filterfunktion könnt ihr einerseits euren bisherigen Trainer finden oder auch einfach euren
+              Lieblingssport
+              auswählen oder nach bestimmten Zeiten filtern, um den perfekten Kurs für euch zu finden.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <section class="showcase mt-5">
+    <div class="container">
+      <div class="col-xl-9 mt-8">
+        <h3 class="mb-3 mt-8"><a href="/group">Gruppen</a></h3>
+      </div>
+      <div class="row">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+          <div class="MultiCarousel-inner">
+            <% if (locals.groups) { %>
+            <% for(var i=0; i<groups.length; i++) {%>
+            <div class="item">
+              <div class="pad15">
+                <h5><%= groups[i].name %></h5>
+                <p><%= groups[i].description %></p>
+                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+              </div>
+            </div>
+            <% } %>
+            <% } %>
+          </div>
+          <button class="btn btn-primary leftLst">
+            <i class="fa fa-chevron-left"></i> </button>
+          <button class="btn btn-primary rightLst"><i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-xl-9  mt-8">
+        <h3 class="mb-3 mt-8"><a href="/events">Events</a></h3>
+      </div>
+      <div class="row">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+          <div class="MultiCarousel-inner">
+            <% if (locals.events) { %>
+            <% for(var i=0; i<events.length; i++) {%>
+            <div class="item">
+              <div class="pad15">
+                <h5><%= events[i].name %></h5>
+                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
+                  <p><%= events[i].description %></p>
+              </div>
+            </div>
+            <% } %>
+            <% } %>
+          </div>
+          <button class="btn btn-primary leftLst">
+            <i class="fa fa-chevron-left"></i> </button>
+          <button class="btn btn-primary rightLst"><i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <%- include('partials/footer') %>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Footer -->
+  <%- include('partials/footer') %>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
 </body>
 
