@@ -46,7 +46,11 @@ exports.findOne = async function(_id) {
 function assignParamsToModel(req) {
   return new Group({
     name: req.body.name,
+    trainers: req.body.trainers,
+    participants: req.body.participants,
     description: req.body.description,
     picture: req.body.picture,
+    events: req.body.events,
   });
 }
+
