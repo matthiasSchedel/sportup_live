@@ -133,6 +133,9 @@
                     <h5><%= events[i].name %></h5>
                   </div>
                 </a>
+                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
+                <p><%= events[i].description %></p>
+                <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
