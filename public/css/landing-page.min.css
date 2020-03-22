@@ -31,7 +31,7 @@ header.masthead {
 
 header.main {
   position: relative;
-  background-color: #729222;
+  background-color: #02C960;
   /* background: url("../img/sportup_3_facebook.png") no-repeat center center; */
   background-size: cover;
   padding-top: 3rem;
@@ -45,6 +45,10 @@ header.masthead {
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+
+.img-thumbnail {
+  max-height: 450px !important;
 }
 
 header.masthead .overlay {
@@ -316,7 +320,7 @@ footer.footer {
 
 .main b,
 .main span {
-  color: #729222;
+  color: #02C960;
 }
 
 .btn-primary {
@@ -325,36 +329,17 @@ footer.footer {
 
 .btn-primary {
   color: #fff;
-  background-color: #729222;
-  border-color: #729222;
+  background-color: #02C960;
+  border-color: #02C960;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(0, 110, 52);
+  border-color: #02C960;
 }
 
 a,
 .text-primary {
-  color: #729222 !important;
-}
-
-.event-participant-image {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-}
-
-.event-image-circle {
-  background: #729222;
-  color: #fff;
-  padding: 5px 20px;
-  border-radius: 50%;
-  font-size: 35px;
-}
-
-.event-category {
-  border-radius: 5px 5px 5px;
-  border: 1px solid #729222;
-  padding: 0px 4px;
-  color: #729222;
-}
-.event-tag {
-  font-weight: bold;
-  color: #729222;
+  color: #02C960 !important;
 }
