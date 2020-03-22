@@ -13,12 +13,12 @@ COPY views /usr/src/app/views
 COPY routes /usr/src/app/routes
 
 RUN npm i npm@latest -g
-RUN npm install # --quiet
-RUN npm install -g nodemon
-RUN npm install express-flash
-RUN npm install express-session
-RUN npm install body-parser
-RUN npm install moment
+RUN npm install --quiet
+RUN npm install -g nodemon --quiet
+RUN npm install express-flash --quiet
+RUN npm install express-session --quiet
+RUN npm install body-parser --quiet
+RUN npm install moment --quiet
 # RUN ls /usr/src/app
 # RUN ls /usr/src/app/ejs
 
