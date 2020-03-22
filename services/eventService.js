@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 
 exports.get = async function(query) {
   try {
-    return await Event.find(query);
+    let events = await Event.find(query);
+    console.log(events);
+    return events
   } catch (e) {
     // Log Errors
     console.log(e);

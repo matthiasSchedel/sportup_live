@@ -1,6 +1,6 @@
 var checkDB = typeof databaseName
 if (checkDB == "undefined") {
-    databaseName = "sportupdb"  // failsafe
+    let databaseName = "sportupdb"  // failsafe
 }
 db = db.getSiblingDB(databaseName)
 db.events.remove({})
@@ -243,6 +243,16 @@ db.groups.insert({
     }],
     description: "Gruppe für Sport ab 6",
     picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
-    categories: ["PowerYoga", "Crossfit"]
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
+
 
 })
