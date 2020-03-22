@@ -1,4 +1,4 @@
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
 <body>
 
@@ -6,19 +6,19 @@
   <%- include('partials/navbar') %>
 
 
-<!-- User profile -->
-<div class="container">
-  <% if (user) { %>
+  <!-- User profile -->
+  <div class="container">
+    <% if (user) { %>
     <div class="row">
       <div class="col-12 col-md-3">
         <h2>Hallo <%= user.name %></h2>
       </div>
-    </div>  
+    </div>
     <div class="row">
       <div class="col-6 col-md-3">
         <img alt="profile picture" class="img-thumbnail" src=<%= user.profilePic %> />
       </div>
-    </div>      
+    </div>
     <div class="row">
       <div class="col-6 col-md-3">
         E-Mail
@@ -33,20 +33,20 @@
       <div class="col-12 ">
         <h4>Meine Freunde</h4>
       </div>
-      
-        <% if (user.friends.length > 0) { 
+
+      <% if (user.friends.length > 0) { 
            user.friends.forEach(function(friend){ %>
-            <div class="col-2 col-md-1">
-              <%= friend.name %>
-            </div>
-        <% }); 
+      <div class="col-2 col-md-1">
+        <%= friend.name %>
+      </div>
+      <% }); 
            } else { %>
-            <div class="col-6 col-md-3">
-            Keine Freunde<br>
-            <img src="https://i.imgflip.com/2pu5b3.png" alt="sad kitten" class="img-thumbnail" /></br>
-            Kitty traurig.
-          </div>
-            <% } %>
+      <div class="col-6 col-md-3">
+        Keine Freunde<br>
+        <img src="https://i.imgflip.com/2pu5b3.png" alt="sad kitten" class="img-thumbnail" /></br>
+        Kitty traurig.
+      </div>
+      <% } %>
     </div>
 
     <!-- Groups -->
@@ -55,7 +55,7 @@
         <h4>Meine Gruppen</h4>
         Kommt noch ;-)
       </div>
-      
+
     </div>
 
     <!-- Participations -->
@@ -69,20 +69,21 @@
         courses.events.forEach(function(event){ 
           if (event.startDate > currentDate) {
             comingEvents += 1 %>
-         <div class="col-6 col-md-3">
-           <%= event.name %> @ <%= event.startDate %>
-         </div>
-     <% } 
+      <div class="col-6 col-md-3">
+        <%= event.name %> @ <%= event.startDate %>
+      </div>
+      <% } 
     }); 
         } 
         if (courses.events.length == 0 || comingEvents == 0 ){ %>
-         <div class="col-6 col-md-3">
-         Keine Kurse<br>
-         <img src="https://i.pinimg.com/originals/3f/1e/52/3f1e520ee2e31b4e6c6e5ba477d793df.jpg" alt="homer" class="img-thumbnail" /></br>
-         Auf geht's! Anmelden!
-       </div>
-         <% } %>
-    </div>   
+      <div class="col-6 col-md-3">
+        Keine Kurse<br>
+        <img src="https://i.pinimg.com/originals/3f/1e/52/3f1e520ee2e31b4e6c6e5ba477d793df.jpg" alt="homer"
+          class="img-thumbnail" /></br>
+        Auf geht's! Anmelden!
+      </div>
+      <% } %>
+    </div>
     <div class="row">
       <div class="col-12 ">
         <h4>Vergangene Kurse</h4>
@@ -92,33 +93,33 @@
         courses.events.forEach(function(event){ 
           if (event.startDate <= currentDate) {
             pastEvents += 1 %>
-         <div class="col-6 col-md-3">
-           <%= event.name %> @ <%= event.startDate %>
-         </div>
-     <% } 
+      <div class="col-6 col-md-3">
+        <%= event.name %> @ <%= event.startDate %>
+      </div>
+      <% } 
     }); 
         } 
         if (courses.events.length == 0 || pastEvents == 0 ){ %>
-         <div class="col-6 col-md-3">
-         Keine Kurse
-       </div>
-         <% } %>
-    </div>     
-            
-  <!-- Error message and call to action login -->
-  <% } else { %>
+      <div class="col-6 col-md-3">
+        Keine Kurse
+      </div>
+      <% } %>
+    </div>
+
+    <!-- Error message and call to action login -->
+    <% } else { %>
     <div class="row">
-      <div class="jumbotron">    
+      <div class="jumbotron">
         <h2>Du bist nicht eingeloggt!</h2>
         <a class="btn btn-primary btn-lg" href="#" role="button">Einloggen</a>
+      </div>
     </div>
+    <% } %>
   </div>
-  <% } %>
-</div>
 
 
 
-<%- include('partials/footer') %>
+  <%- include('partials/footer') %>
 
 </body>
 
