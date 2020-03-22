@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Group = require('../models/Group.model')
-var groupService = require('../services/group.service')
+var GroupService = require('../services/groupService')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/:name', function (req, res, next) {
-  groupService.changeGroupState()
+  GroupService.changeGroupState()
   renderGroupDetail(req, res)
 })
 
@@ -27,5 +27,17 @@ const renderGroupDetail = (req, res) => {
     });
   });
 }
+
+// Create a new event
+router.post("/", async function(req, res, next) {
+    try {
+        await GroupService.create(req)
+        var groups = await GroupService.get({})
+        res.render("groups", { groups });
+    } catch (e) {
+        req.flash("error", "Fehler beim event erstellen");
+        res.render("groups", { groups: [] });
+    }
+});
 
 module.exports = router;
