@@ -11,9 +11,9 @@ db.groups.remove({})
 
 db.events.insert({
     _id: new ObjectId("000000000000000000000100"),
-    name: "Workout 1",
+    name: "Schwitz-Fit",
     startDate: new Date("2020-03-22T15:00:00"),
-    startDate: new Date("2020-03-22T16:00:00"),
+    endDate: new Date("2020-03-22T16:00:00"),
     tags: ["Tanzen",],
     categories: ["Beweglichkeit"],
     difficulty: "Leicht",
@@ -29,7 +29,7 @@ db.events.insert({
         }
     ],
     comments: [],
-    description: "Workout number 1",
+    description: "Ich bring dich zuhause so richtig ins Schwitzen, ganz ohne große Ausrüstung.",
     sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     paymentLink: "https://paypal.me",
     ratings: [{
@@ -41,14 +41,14 @@ db.events.insert({
         rating: 2,
         comment: "Geht so"
     }],
-    picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
+    picture: "img/demo/events/bruce-mars-WGN6ZEFEZbs-unsplash.jpg",
 })
 
 db.events.insert({
     _id: new ObjectId("000000000000000000000101"),
-    name: "Workout 2",
+    name: "The next Arnie",
     startDate: new Date("2020-03-22T17:30:00"),
-    startDate: new Date("2020-03-22T19:00:00"),
+    endDate: new Date("2020-03-22T19:00:00"),
     tags: ["Tanzen",],
     categories: ["Kraft", "Yoga"],
     difficulty: "Profis",
@@ -67,7 +67,7 @@ db.events.insert({
         }
     ],
     comments: [],
-    description: "Workout number 2",
+    description: "Power-Workout für die nächsten Arnies! Schnapp dir die Hantel und mach mit!",
     sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     paymentLink: "https://paypal.me",
     ratings: [{
@@ -79,9 +79,198 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
+    picture: "img/demo/events/man-holding-black-dumbbell-1229356.jpg",
 })
 
+db.events.insert({
+    _id: new ObjectId("000000000000000000000102"),
+    name: "Rückenschule",
+    startDate: new Date("2020-03-22T20:00:00"),
+    endDate: new Date("2020-03-22T21:00:00"),
+    tags: ["Tanzen",],
+    categories: ["Kraft", "Yoga"],
+    difficulty: "Profis",
+    location: "Frankfurt",
+    trainer: 5,
+    language: "de",
+    participants: [{
+            user: new ObjectId("000000000000000000000001"),
+            name: "Peter",
+        }, {
+            user: new ObjectId("000000000000000000000002"),
+            name: "Janine",
+        }, {
+            user: new ObjectId("000000000000000000000003"),
+            name: "Kerstin",
+        }
+    ],
+    comments: [],
+    description: "Kerstin schaut sich live deine Übungen an und hilft dir die richtige Pose zu finden!",
+    sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    paymentLink: "https://paypal.me",
+    ratings: [{
+        user: new ObjectId("000000000000000000000002"),
+        rating: 4,
+        comment: "Geht besser"
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        rating: 4,
+        comment: "Top"
+    }],
+    picture: "img/demo/events/event3.jpg",
+})
+
+db.events.insert({
+    _id: new ObjectId("000000000000000000000103"),
+    name: "Tatort-Yoga",
+    startDate: new Date("2020-03-22T20:15:00"),
+    endDate: new Date("2020-03-22T21:45:00"),
+    tags: ["Tanzen",],
+    categories: ["Kraft", "Yoga"],
+    difficulty: "Profis",
+    location: "Frankfurt",
+    trainer: 5,
+    language: "de",
+    participants: [{
+            user: new ObjectId("000000000000000000000001"),
+            name: "Peter",
+        }, {
+            user: new ObjectId("000000000000000000000002"),
+            name: "Janine",
+        }, {
+            user: new ObjectId("000000000000000000000003"),
+            name: "Kerstin",
+        }
+    ],
+    comments: [],
+    description: "Lasst uns gemeinsam Tatort schauen und Yoga machen! Perfect Sunday evening 😊",
+    sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    paymentLink: "https://paypal.me",
+    ratings: [{
+        user: new ObjectId("000000000000000000000002"),
+        rating: 4,
+        comment: "Geht besser"
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        rating: 4,
+        comment: "Top"
+    }],
+    picture: "img/demo/events/event4.jpg",
+})
+
+db.events.insert({
+    _id: new ObjectId("000000000000000000000104"),
+    name: "Get on your knees",
+    startDate: new Date("2020-03-23T08:00:00"),
+    endDate: new Date("2020-03-23T08:45:00"),
+    tags: ["Tanzen",],
+    categories: ["Kraft", "Yoga"],
+    difficulty: "Profis",
+    location: "Frankfurt",
+    trainer: 5,
+    language: "de",
+    participants: [{
+            user: new ObjectId("000000000000000000000001"),
+            name: "Peter",
+        }, {
+            user: new ObjectId("000000000000000000000002"),
+            name: "Janine",
+        }, {
+            user: new ObjectId("000000000000000000000003"),
+            name: "Kerstin",
+        }
+    ],
+    comments: [],
+    description: "Montagsworkout zum Niederknien! Für Power die ganze Woche!",
+    sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    paymentLink: "https://paypal.me",
+    ratings: [{
+        user: new ObjectId("000000000000000000000002"),
+        rating: 4,
+        comment: "Geht besser"
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        rating: 4,
+        comment: "Top"
+    }],
+    picture: "img/demo/events/event5.jpg",
+})
+
+db.events.insert({
+    _id: new ObjectId("000000000000000000000105"),
+    name: "Full Body Workout",
+    startDate: new Date("2020-03-23T10:00:00"),
+    endDate: new Date("2020-03-23T11:00:00"),
+    tags: ["Tanzen",],
+    categories: ["Kraft", "Yoga"],
+    difficulty: "Profis",
+    location: "Frankfurt",
+    trainer: 5,
+    language: "de",
+    participants: [{
+            user: new ObjectId("000000000000000000000001"),
+            name: "Peter",
+        }, {
+            user: new ObjectId("000000000000000000000002"),
+            name: "Janine",
+        }, {
+            user: new ObjectId("000000000000000000000003"),
+            name: "Kerstin",
+        }
+    ],
+    comments: [],
+    description: "Abwechslung beim Full Body Workout mit Steffi. Spaß garantiert!",
+    sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    paymentLink: "https://paypal.me",
+    ratings: [{
+        user: new ObjectId("000000000000000000000002"),
+        rating: 4,
+        comment: "Geht besser"
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        rating: 4,
+        comment: "Top"
+    }],
+    picture: "img/demo/events/event6.jpg",
+})
+
+db.events.insert({
+    _id: new ObjectId("000000000000000000000106"),
+    name: "X-Fit at Home",
+    startDate: new Date("2020-03-23T13:30:00"),
+    endDate: new Date("2020-03-23T15:00:00"),
+    tags: ["Tanzen",],
+    categories: ["Kraft", "Yoga"],
+    difficulty: "Profis",
+    location: "Frankfurt",
+    trainer: 5,
+    language: "de",
+    participants: [{
+            user: new ObjectId("000000000000000000000001"),
+            name: "Peter",
+        }, {
+            user: new ObjectId("000000000000000000000002"),
+            name: "Janine",
+        }, {
+            user: new ObjectId("000000000000000000000003"),
+            name: "Kerstin",
+        }
+    ],
+    comments: [],
+    description: "Wir zeigen dir wie du mit allem was der Hamster gekauft hat so richtig powern kannst.",
+    sessionLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    paymentLink: "https://paypal.me",
+    ratings: [{
+        user: new ObjectId("000000000000000000000002"),
+        rating: 4,
+        comment: "Geht besser"
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        rating: 4,
+        comment: "Top"
+    }],
+    picture: "img/demo/events/event7.jpg",
+})
 
 db.users.insert({
     _id: new ObjectId("000000000000000000000001"),
