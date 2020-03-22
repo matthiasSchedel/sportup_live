@@ -1,14 +1,17 @@
-exports.changeGroupState = function() {
-  // TODO Fill with logic
+exports.changeGroupState = async function (id, userid, username) {
+  let group = await Group.findById(id)
+  group.participants.push({ user: userid, name: username });
+  group.save()
 };
 
-exports.isJoined = function() {
-  // TODO Fill with logic
-  return false;
+exports.isJoined = async function (id, userid) {
+  let group = await Group.findById(id) 
+  const participants =  group.participants.filter(p => p.user == userid)
+  return participants && participants.length == 1  
 };
 
 var Group = require("../models/Group.model");
-exports.get = async function(query) {
+exports.get = async function (query) {
   try {
     return await Group.find(query);
   } catch (e) {
@@ -18,7 +21,7 @@ exports.get = async function(query) {
   }
 };
 
-exports.create = async function(body) {
+exports.create = async function (body) {
   try {
     var group = assignParamsToModel(body);
     return await group.save();
