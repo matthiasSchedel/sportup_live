@@ -6,30 +6,7 @@
   <%- include('partials/navbar') %>
 
   <!-- Masthead -->
-  <header class="masthead text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <!-- <h1 class="mb-5">Sportup is great</h1>
-          <h6 class="mb-3">Et dolor ea elit sit eu irure esse in magna elit aliqua commodo ut.</h6> -->
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <!-- <form>
-            <div class="form-row"> -->
-          <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div> -->
-          <div class="col-12 col-md-12 mb-4 mb-md-0">
-            <!-- <button type=" submit" class="btn btn-block btn-lg btn-primary">Loslegen</button> -->
-            <!-- <a class="btn btn-primary btn-block btn-lg" href="/login-page">Loslegen</a> -->
-          </div>
-          <!-- </div>
-          </form> -->
-        </div>
-      </div>
-    </div>
-  </header>
+  <%- include('partials/banner') %>
 
 
   <section class="main">
@@ -43,6 +20,8 @@
             dürfen und
             Trainer,
             die Kurse von zu Hause anbieten wollen, verbinden.
+          </p>
+          <p>
             Viele Trainer haben seit der Krise alle Einnahmequellen verloren. Wir wollen dir mit dieser Plattform
             helfen
             auf eine einfache Weise mit deinen bisherigen Teilnehmern in Kontakt zu treten oder auch deinen Kurs für
@@ -61,7 +40,7 @@
           <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="d-flex">
               <!-- <i class="fa fa-chalkboard-teacher m-auto text-primary"></i> -->
-              <img class="img-thumbnail" alt="trainer" src="img/woman-exercising-bear-body-of-water-1300526.jpg" />
+              <img class="img-thumbnail" alt="trainer" src="/img/woman-exercising-bear-body-of-water-1300526.jpg" />
             </div>
             <h3>Für Trainer</h3>
             <p class="lead mb-0">Erstellt in SportUp Live ganz einfach einen Kalender mit all euren geplanten
@@ -74,7 +53,7 @@
           <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="d-flex">
               <!-- <i class="fa fa-running m-auto text-primary"></i> -->
-              <img class="img-thumbnail" alt="trainer" src="img/group-of-woman-in-yoga-class-866021.jpg" />              
+              <img class="img-thumbnail" alt="trainer" src="/img/group-of-woman-in-yoga-class-866021.jpg" />              
             </div>
             <h3>Für Sportbegeisterte</h3>
             <p class="lead mb-0">In der Kalenderfunktion findet ihr alle Livestreams der teilnehmenden Trainer.
@@ -106,7 +85,7 @@
                   </div>
                 </a>
                 <p><%= groups[i].description %></p>
-                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+                <img src="/<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
@@ -137,7 +116,7 @@
                 </a>
                 <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
                 <p><%= events[i].description %></p>
-                <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
+                <img src="/<%= events[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
@@ -155,9 +134,9 @@
   <%- include('partials/footer') %>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/carousel.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/carousel.js"></script>
 
 </body>
 

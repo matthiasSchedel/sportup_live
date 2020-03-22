@@ -5,37 +5,40 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <!-- <div class="container"> -->
-    <a class="float-left navbar-brand" href="/"><b>Sportup</b> Live</a>
-    <div class="float-right">      
+    <a class="float-left navbar-brand" href="/"><b>SportUp</b> Live</a>
+    <div class="float-right">
       <a class="btn btn-primary btn-lg" href="/logout">Logout</a>
     </div>
     <!-- </div> -->
   </nav>
 
   <!-- Masthead -->
-  <header class="masthead text-white text-center">
+  <header class="main text-white text-center">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <!-- <h1 class="mb-5">Sportup is great</h1>
-          <h6 class="mb-3">Et dolor ea elit sit eu irure esse in magna elit aliqua commodo ut.</h6> -->
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <!-- <form>
+        <div class="col-xl-8 mx-auto">
+          <h1 class="mb-5">Finde deinen nächsten Live-Kurs</h1>
+          <h4 class="mb-3" style="opacity: 0.7"><%=events.length%> Events für diese Woche in <%=groups.length%>
+            Gruppe(n)
+          </h4>
+          <!-- </div> -->
+
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <!-- <form>
             <div class="form-row"> -->
-          <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
+            <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
               </div> -->
-          <div class="col-12 col-md-12 mb-4 mb-md-0">
-            <!-- <button type=" submit" class="btn btn-block btn-lg btn-primary">Loslegen</button> -->
-            <!-- <a class="btn btn-primary btn-block btn-lg" href="/login-page">Loslegen</a> -->
-          </div>
-          <!-- </div>
+            <div class="col-12 col-md-12 mb-4 mb-md-0">
+              <!-- <button type=" submit" class="btn btn-block btn-lg btn-primary">Loslegen</button> -->
+              <!-- <a class="btn btn-primary btn-block btn-lg" href="/login-page">Loslegen</a> -->
+            </div>
+            <!-- </div>
           </form> -->
+          </div>
         </div>
       </div>
-    </div>
   </header>
 
 
@@ -44,59 +47,48 @@
       <div class="row">
         <div class="col-12">
           <p class="card-text">
-            <b>SportUp Live</b> ist eine Plattform für alle, die sich in Zeiten von Social Distancing
-            <span>gemeinsam virtuell
-              fit halten wollen</span>. Die Plattform möchten Menschen, die aktuell Ihr zu Hause nicht verlassen
-            dürfen und
-            Trainer,
-            die Kurse von zu Hause anbieten wollen, verbinden.
-            Viele Trainer haben seit der Krise alle Einnahmequellen verloren. Wir wollen dir mit dieser Plattform
-            helfen
-            auf eine einfache Weise mit deinen bisherigen Teilnehmern in Kontakt zu treten oder auch deinen Kurs für
-            eine
-            größere Gruppe zu öffnen.
+            Hallo <%= user.name %>
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fa fa-chalkboard-teacher m-auto text-primary"></i>
-            </div>
-            <h3>Für Trainer</h3>
-            <p class="lead mb-0">Erstellt in SportUp Live ganz einfach einen Kalender mit all euren geplanten
-              Livestreams
-              und gebt
-              ein, wie die Teilnehmer euch für den virtuellen Kurs bezahlen können.</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fa fa-running m-auto text-primary"></i>
-            </div>
-            <h3>Für Sportbegeisterte</h3>
-            <p class="lead mb-0">In der Kalenderfunktion findet ihr alle Livestreams der teilnehmenden Trainer.
-              Über die
-              Filterfunktion könnt ihr einerseits euren bisherigen Trainer finden oder auch einfach euren
-              Lieblingssport
-              auswählen oder nach bestimmten Zeiten filtern, um den perfekten Kurs für euch zu finden.</p>
-          </div>
-        </div>
-      </div>
+
+
+  <%- include('partials/events-partial') %>
+
+  <!-- <div class="column">
+    <div class="col-12 ">
+      <h4>Anstehende Kurse</h4>
     </div>
-  </section>
+    <% var comingEvents = 0 
+      if (events.length > 0) { 
+      var currentDate = new Date()
+      events.forEach(function(event){ 
+        if (event.startDate > currentDate) {
+          comingEvents += 1 %>
+    <div class="col-6 col-md-3">
+      <%= event.name %> @ <%= event.startDate %>
+    </div>
+    <% } 
+  }); 
+      } 
+      if (events.length == 0 ){ %>
+    <div class="col-6 col-md-3">
+      Keine Kurse<br>
+      <img src="https://i.pinimg.com/originals/3f/1e/52/3f1e520ee2e31b4e6c6e5ba477d793df.jpg" alt="homer"
+        class="img-thumbnail" /></br>
+      Auf geht's! Anmelden!
+    </div>
+    <% } %>
+  </div> -->
+
 
   <section class="showcase mt-5">
     <div class="container">
       <div class="col-xl-9 mt-8">
-        <h3 class="mb-3 mt-8"><a href="/group">Gruppen</a></h3>
+        <h3 class="mb-3 mt-8"><a href="/group">Alle Gruppen</a></h3>
       </div>
       <div class="row">
         <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
@@ -107,7 +99,7 @@
               <div class="pad15">
                 <h5><%= groups[i].name %></h5>
                 <p><%= groups[i].description %></p>
-                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+                <img src="/<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
@@ -122,7 +114,7 @@
 
     <div class="container">
       <div class="col-xl-9  mt-8">
-        <h3 class="mb-3 mt-8"><a href="/events">Events</a></h3>
+        <h3 class="mb-3 mt-8"><a href="/events">Alle Events</a></h3>
       </div>
       <div class="row">
         <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
@@ -152,21 +144,14 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Footer -->
-  <%- include('partials/footer') %>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="/js/sb-admin-2.min.js"></script>
 
 </body>
 

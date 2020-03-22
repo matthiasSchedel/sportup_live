@@ -2,8 +2,8 @@
 
 <body>
 
-  <!-- Navigation -->
-  <%- include('partials/navbar') %>
+    <!-- Navigation -->
+    <%- include('partials/navbar') %>
 
 
     <!-- Masthead -->
@@ -29,6 +29,20 @@
             </div>
         </div>
     </header>
+
+    <br>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar">
+              <h2>Events</h2>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+  
 
 
 
@@ -68,7 +82,8 @@
                             <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= events[i].description %></td>
                             <td>
-                                <a class="btn btn-danger delete" onclick="return alert('Bist du sicher?')" href="../events/delete/<%=events[i]._id%>">Delete</a>
+                                <a class="btn btn-danger delete" onclick="return alert('Bist du sicher?')"
+                                    href="../events/delete/<%=events[i]._id%>">Delete</a>
                             </td>
                         </tr>
                         <% } %>
@@ -79,7 +94,6 @@
             </div>
         </div>
     </section>
-
 
     <%- include('partials/footer') %>
 
