@@ -68,6 +68,21 @@
             <% } %>
           </div>
       </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12">
+            <% if (locals.event) { %>
+                <h5>Du kannst unter folgendem Link am Live Stream teilnehmen:
+                </h5>
+                <%= event.sessionLink %>
+            <% } %>
+            <% if (locals.event.paymentLink) { %>
+                <h5>Und unter folgendem Link dem Lehrer Geld bezahlen:
+                </h5>
+                <%= event.paymentLink %>
+            <% } %>
+            </div>
+      </div>
     </div>
   </section>
 
