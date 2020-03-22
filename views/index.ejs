@@ -98,7 +98,11 @@
             <% for(var i=0; i<groups.length; i++) {%>
             <div class="item">
               <div class="pad15">
-                <h5><%= groups[i].name %></h5>
+                <a href="/group/<%- encodeURI(groups[i].name) %>">
+                  <div>
+                    <h5><%= groups[i].name %></h5>
+                  </div>
+                </a>
                 <p><%= groups[i].description %></p>
                 <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
@@ -124,9 +128,11 @@
             <% for(var i=0; i<events.length; i++) {%>
             <div class="item">
               <div class="pad15">
-                <h5><%= events[i].name %></h5>
-                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %></p>
-                <p><%= events[i].description %></p>
+                <a href="/events/<%- encodeURI(events[i].id) %>">
+                  <div>
+                    <h5><%= events[i].name %></h5>
+                  </div>
+                </a>
               </div>
             </div>
             <% } %>

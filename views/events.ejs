@@ -109,7 +109,7 @@
                         <% for(var i=0; i<events.length; i++) {%>
                         <tr>
                             <th scope="row"><%= i %></th>
-                            <td><%= events[i].name %></td>
+                            <td><a href="/events/<%- encodeURI(events[i].id) %>"><%= events[i].name %></a> </td>
                             <td><%= moment(events[i].startDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
                             <td><%= events[i].description %></td>

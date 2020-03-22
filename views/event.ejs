@@ -1,0 +1,78 @@
+<%- include('partials/head') %>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('partials/navbar') %>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Sportup is great</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <strong><%= event.name %></strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar">
+            <a href="/group"><span class="nav-item"><i class="fa fa-arrow-circle-left"></i> Back to overview</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-icons bg-light text-center showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="<%= event.picture %>" class="img-fluid" />
+        </div>
+        <div class="col-lg-6">
+          <h2><%= event.name %></h2>
+          <div class="mt-5 text-left">
+            <h3>Trainer</h3>
+            <ul class="list-group">
+              <% if (locals.event.trainers) { %>
+              <% for(var i=0; i<event.trainers.length; i++) {%>
+              <li class="list-group-item"><i class="fa fa-user"></i> <%= event.trainers[i].name %></li>
+              <li class="list-group-item"><i class="fa fa-user"></i> Kai</li>
+              <% } %>
+              <% } %>
+            </ul>
+          </div>
+          <div class="mt-5 text-left">
+            <h3>Teilnehmer</h3>
+            <% if (locals.event.participants) { %>
+            <i class="fa fa-id-card"></i> <%= event.participants.length %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+            <h3>Beschreibung
+            </h3>
+            <% if (locals.event) { %>
+              <%= event.description %>
+            <% } %>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+</body>
+
+</html>

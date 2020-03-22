@@ -41,6 +41,7 @@ db.events.insert({
         rating: 2,
         comment: "Geht so"
     }],
+    picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
 })
 
 db.events.insert({
@@ -78,6 +79,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
+    picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
 })
 
 
