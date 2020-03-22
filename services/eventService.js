@@ -5,7 +5,7 @@ exports.get = async function(query) {
   try {
     let events = await Event.find(query);
     console.log(events);
-    return events
+    return events;
   } catch (e) {
     // Log Errors
     console.log(e);
@@ -13,9 +13,9 @@ exports.get = async function(query) {
   }
 };
 
-exports.create = async function(req) {
+exports.create = async function(body) {
   try {
-    var event = assignParamsToModel(req);
+    var event = assignParamsToModel(body);
     event._id = new mongoose.Types.ObjectId();
     return await event.save();
   } catch (e) {
@@ -27,9 +27,9 @@ exports.create = async function(req) {
 
 exports.findOne = async function(req) {
   try {
-    let events = await Event.find({_id:req.params.id});
+    let events = await Event.find({ _id: req.params.id });
     if (events.length > 0) {
-        return events[0]; 
+      return events[0];
     }
     throw Error("No event found");
   } catch (e) {
@@ -39,13 +39,11 @@ exports.findOne = async function(req) {
   }
 };
 
-exports.update = async function(req) {
+exports.update = async function(body) {
   try {
-    return await Event.findByIdAndUpdate(
-      req.params.id,
-      assignParamsToModel(req),
-      { new: true }
-    );
+    return await Event.findOneAndUpdate(body._id, assignParamsToModel(body), {
+      new: true
+    });
   } catch (e) {
     // Log Errors
     console.log(e);
@@ -63,24 +61,24 @@ exports.delete = async function(req) {
   }
 };
 
-function assignParamsToModel(req) {
+function assignParamsToModel(body) {
   return new Event({
-    name: req.body.name,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    tags: req.body.tags,
-    category: req.body.category,
-    difficulty: req.body.difficulty,
-    location: req.body.location,
-    trainer: req.body.trainer,
-    language: req.body.language,
-    participants: req.body.participants,
-    comments: req.body.comments,
-    groups: req.body.groups,
-    description: req.body.description,
-    sessionLink: req.body.sessionLink,
-    paymentLink: req.body.paymentLink,
-    rating: req.body.rating,
-    picture: req.body.picture,
+    name: body.name,
+    startDate: body.startDate,
+    endDate: body.endDate,
+    tags: body.tags,
+    category: body.category,
+    difficulty: body.difficulty,
+    location: body.location,
+    trainer: body.trainer,
+    language: body.language,
+    participants: body.participants,
+    comments: body.comments,
+    groups: body.groups,
+    description: body.description,
+    sessionLink: body.sessionLink,
+    paymentLink: body.paymentLink,
+    rating: body.rating,
+    picture: body.picture
   });
 }

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var moment = require("moment");
 var Group = require('../models/Group.model')
 var GroupService = require('../services/groupService')
 
@@ -17,7 +18,7 @@ router.post('/:id', function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
         var groups = await GroupService.findOne(req.params.id)
         console.log('find group:' + groups)
-        res.render("group", { group: groups, isJoined: GroupService.isJoined() });
+        res.render("group", { group: groups, isJoined: GroupService.isJoined(), moment});
 });
 
 // Create a new event
