@@ -92,7 +92,8 @@ db.users.insert({
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
     }],
-    profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Peter_Dinklage_by_Gage_Skidmore.jpg/395px-Peter_Dinklage_by_Gage_Skidmore.jpg"
+    profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Peter_Dinklage_by_Gage_Skidmore.jpg/395px-Peter_Dinklage_by_Gage_Skidmore.jpg",
+    passwordHash: "$2b$10$bN3D/ljjc06aM2u3iLtt5OtaA05ZZABBmzneJQVKgc6OX95dDa97y"
 })
 
 db.users.insert({
@@ -109,7 +110,8 @@ db.users.insert({
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
     }],
-    profilePic: ""
+    profilePic: "",
+    passwordHash: "$2b$10$bN3D/ljjc06aM2u3iLtt5OtaA05ZZABBmzneJQVKgc6OX95dDa97y"
 })
 
 db.users.insert({
@@ -121,7 +123,8 @@ db.users.insert({
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
     }],
-    profilePic: ""
+    profilePic: "",
+    passwordHash: "$2b$10$bN3D/ljjc06aM2u3iLtt5OtaA05ZZABBmzneJQVKgc6OX95dDa97y"
 })
 
 db.users.insert({
@@ -133,7 +136,8 @@ db.users.insert({
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
     }],
-    profilePic: ""
+    profilePic: "",
+    passwordHash: "$2b$10$bN3D/ljjc06aM2u3iLtt5OtaA05ZZABBmzneJQVKgc6OX95dDa97y"
 })
 
 db.users.insert({
@@ -145,7 +149,8 @@ db.users.insert({
         acceptedDate: new Date(),
         acceptedVersion: "1.0"
     }],
-    profilePic: ""
+    profilePic: "",
+    passwordHash: "$2b$10$bN3D/ljjc06aM2u3iLtt5OtaA05ZZABBmzneJQVKgc6OX95dDa97y"
 })
 
 db.trainers.insert({
