@@ -17,7 +17,6 @@ var usersRouter = require('./routes/users');
 var loginPageRouter = require('./routes/login');
 var signupPageRouter = require('./routes/signup');
 var dsgvoPageRouter = require('./routes/dsgvo');
-var termsOfUsePageRouter = require('./routes/terms-of-use');
 var aboutPageRouter = require('./routes/about');
 var contactPageRouter = require('./routes/contact');
 
@@ -193,7 +192,6 @@ app.use('/users', usersRouter);
 app.use('/login-page', loginPageRouter);
 app.use('/signup-page', signupPageRouter);
 app.use('/dsgvo', dsgvoPageRouter);
-app.use('/terms-of-use', termsOfUsePageRouter);
 app.use('/contact', contactPageRouter);
 app.use('/about', aboutPageRouter);
 app.use('/group', groupsRouter);
