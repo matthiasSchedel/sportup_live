@@ -207,15 +207,17 @@
                   <p>50% off</p>
                 </div>
               </div>
+              <% if (locals.events) { %>
+              <% for(var i=0; i<events.length; i++) {%>
               <div class="item">
                 <div class="pad15">
-                  <p class="lead">Multi Item Carousel</p>
-                  <p>₹ 1</p>
-                  <p>₹ 6000</p>
-                  <p>50% off</p>
+                  <p class="lead"><%= events[i].name %></p>
+                  <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
+                  <p><%= events[i].description %></p>
                 </div>
               </div>
-
+              <% } %>
+              <% } %>
               <div class="item">
                 <div class="pad15">
                   <p class="lead">Multi Item Carousel</p>
