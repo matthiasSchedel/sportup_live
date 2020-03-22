@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <img src="/<%= event.picture %>" class="img-fluid" />
+          <img src="<%= event.picture %>" class="img-fluid" />
         </div>
         <div class="col-lg-6">
           <h2>Event: <%= event.name %></h2>
@@ -49,27 +49,27 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-            <h3>Beschreibung
-            </h3>
-            <% if (locals.event) { %>
-              <%= event.description %>
-            <% } %>
-          </div>
+          <h3>Beschreibung
+          </h3>
+          <% if (locals.event) { %>
+          <%= event.description %>
+          <% } %>
+        </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-12">
-            <% if (locals.event) { %>
-                <h5>Du kannst unter folgendem Link am Live Stream teilnehmen:
-                </h5>
-                <%= event.sessionLink %>
-            <% } %>
-            <% if (locals.event.paymentLink) { %>
-                <h5>Und unter folgendem Link dem Lehrer Geld bezahlen:
-                </h5>
-                <%= event.paymentLink %>
-            <% } %>
-            </div>
+          <% if (locals.event) { %>
+          <h5>Du kannst unter folgendem Link am Live Stream teilnehmen:
+          </h5>
+          <%= event.sessionLink %>
+          <% } %>
+          <% if (locals.event.paymentLink) { %>
+          <h5>Und unter folgendem Link dem Lehrer Geld bezahlen:
+          </h5>
+          <%= event.paymentLink %>
+          <% } %>
+        </div>
       </div>
     </div>
   </section>
