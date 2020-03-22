@@ -333,3 +333,28 @@ a,
 .text-primary {
   color: #729222 !important;
 }
+
+.event-participant-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.event-image-circle {
+  background: #729222;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 50%;
+  font-size: 35px;
+}
+
+.event-category {
+  border-radius: 5px 5px 5px;
+  border: 1px solid #729222;
+  padding: 0px 4px;
+  color: #729222;
+}
+.event-tag {
+  font-weight: bold;
+  color: #729222;
+}
