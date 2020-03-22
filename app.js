@@ -12,6 +12,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var indexRouter = require('./routes/index');
+var mainRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
 var loginPageRouter = require('./routes/login');
 var signupPageRouter = require('./routes/signup');
@@ -141,17 +142,18 @@ app.get('/index.html', function (req, res, next) {
 app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login-page' }),
   function (req, res) {
-    res.redirect('/');
+    res.redirect('/main');
   });
 
 
 app.post('/signup',
   passport.authenticate('signup-local', { failureRedirect: '/signup-page' }),
   function (req, res) {
-    res.redirect('/');
+    res.redirect('/main');
   });
 
 app.use('/', indexRouter);
+app.use('/main', mainRouter);
 app.use('/events', eventsRouter);
 app.use('/users', usersRouter);
 
