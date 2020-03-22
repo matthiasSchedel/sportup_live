@@ -22,7 +22,7 @@ router.get('/:id', async function (req, res, next) {
     if (req.session.user) {
       isJoined = await GroupService.isJoined(req.params.id, req.session.user._id)
     }
-  res.render("group", { group: groups, isJoined: isJoined, moment });
+  res.render("group", { group: groups, isJoined: isJoined, moment, loggedIn: !!req.session.user });
 });
 
 // Create a new group
