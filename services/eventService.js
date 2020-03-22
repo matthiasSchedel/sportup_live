@@ -25,9 +25,9 @@ exports.create = async function(req) {
 
 exports.findOne = async function(req) {
   try {
-    let event = Event.find({_id:req.params.id});
-    if (event.length > 0) {
-        return event; 
+    let events = await Event.find({_id:req.params.id});
+    if (events.length > 0) {
+        return events[0]; 
     }
     throw Error("No event found");
   } catch (e) {
@@ -66,6 +66,7 @@ function assignParamsToModel(req) {
     name: req.body.name,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
-    description: req.body.description
+    description: req.body.description,
+    picture: req.body.picture
   });
 }

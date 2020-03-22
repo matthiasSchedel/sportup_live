@@ -31,7 +31,7 @@ router.get("/:id", async function(req, res, next) {
     try {
         var event = await EventService.findOne(req)
         console.log(event);
-        res.render("event", { event: event[0], moment: moment });
+        res.render("event", { event: event, moment: moment });
     } catch (e) {
         req.flash("error", "Fehler beim event laden");
         res.render("event", { event: [], moment: moment });
