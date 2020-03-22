@@ -13,7 +13,6 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mainPageRouter = require('./routes/main');
 var loginPageRouter = require('./routes/login');
 var signupPageRouter = require('./routes/signup');
 var dsgvoPageRouter = require('./routes/dsgvo');
@@ -141,26 +140,22 @@ app.get('/logout', function (req, res, next)
   res.redirect('/');
 });
 
-app.get('/index.html', function (req, res, next)
-{
-  res.redirect('/main');
+app.get('/index.html', function (req, res, next) {
+  res.redirect('/');
 });
 
 
 app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login-page' }),
-  function (req, res)
-  {
-
+  function (req, res) {
     res.redirect('/main');
   });
 
 
 app.post('/signup',
   passport.authenticate('signup-local', { failureRedirect: '/signup-page' }),
-  function (req, res)
-  {
-    res.redirect('/main');
+  function (req, res) {
+    res.redirect('/');
   });
 
 app.use('/', indexRouter);
@@ -169,25 +164,22 @@ app.use('/users', usersRouter);
 
 app.use('/login-page', loginPageRouter);
 app.use('/signup-page', signupPageRouter);
-app.use('/main', mainPageRouter);
 app.use('/dsgvo', dsgvoPageRouter);
 app.use('/terms-of-use', termsOfUsePageRouter);
 app.use('/contact', contactPageRouter);
 app.use('/about', aboutPageRouter);
-app.use('/groups', groupsRouter);
+app.use('/group', groupsRouter);
 app.use('/profile', profileRouter);
 
 
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next)
-{
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next)
-{
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
