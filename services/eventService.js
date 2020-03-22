@@ -68,7 +68,19 @@ function assignParamsToModel(req) {
     name: req.body.name,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
+    tags: req.body.tags,
+    category: req.body.category,
+    difficulty: req.body.difficulty,
+    location: req.body.location,
+    trainer: req.body.trainer,
+    language: req.body.language,
+    participants: req.body.participants,
+    comments: req.body.comments,
+    groups: req.body.groups,
     description: req.body.description,
-    picture: req.body.picture
+    sessionLink: req.body.sessionLink,
+    paymentLink: req.body.paymentLink,
+    rating: req.body.rating,
+    picture: req.body.picture,
   });
 }
