@@ -36,7 +36,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <img src="<%= group.picture %>" class="img-fluid" />
+          <img src="/<%= group.picture %>" class="img-fluid" />
         </div>
         <div class="col-lg-6">
           <h2><%= group.name %></h2>
@@ -96,7 +96,7 @@
                     </a>
                     <p>Start: <%= moment(group.events[i].startDate).locale('de').format('L LT') %>
                     <p><%= group.events[i].description %></p>
-                    <img src="<%= group.events[i].picture %>" class="img-thumbnail"></i>
+                    <img src="/<%= group.events[i].picture %>" class="img-thumbnail"></i>
                   </div>
                 </div>
                 <% } %>
@@ -113,7 +113,7 @@
   </section>
 
   <%- include('partials/footer') %>
-  <script src="js/carousel.js"></script>
+  <script src="/js/carousel.js"></script>
 </body>
 
 </html>
