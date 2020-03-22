@@ -36,7 +36,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <img src="../<%= group.picture %>" class="img-fluid" />
+          <img src="<%= group.picture %>" class="img-fluid" />
         </div>
         <div class="col-lg-6">
           <h2><%= group.name %></h2>
@@ -75,10 +75,45 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-9 text-left">
+          <h3>Events</h3>
+        </div>
+        <%- include('partials/createAndUpdateEvent-form') %>
+        <div class="row">
+            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+              <div class="MultiCarousel-inner">
+                <% if (locals.group.events) { %>
+                <% for(var i=0; i<group.events.length; i++) {%>
+                <div class="item">
+                  <div class="pad15">
+                    <a href="/events/<%- encodeURI(group.events[i].id) %>">
+                      <div>
+                        <h5><%= group.events[i].name %></h5>
+                      </div>
+                    </a>
+                    <p>Start: <%= moment(group.events[i].startDate).locale('de').format('L LT') %>
+                    <p><%= group.events[i].description %></p>
+                    <img src="<%= group.events[i].picture %>" class="img-thumbnail"></i>
+                  </div>
+                </div>
+                <% } %>
+                <% } %>
+              </div>
+              <button class="btn btn-primary leftLst">
+                <i class="fa fa-chevron-left"></i> </button>
+              <button class="btn btn-primary rightLst"><i class="fa fa-chevron-right"></i></button>
+            </div>
+          </div>
+        
+      </div>
+    </div>
   </section>
 
   <%- include('partials/footer') %>
-
+  <script src="js/carousel.js"></script>
 </body>
 
 </html>

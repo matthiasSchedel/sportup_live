@@ -1,6 +1,6 @@
 var checkDB = typeof databaseName
 if (checkDB == "undefined") {
-    databaseName = "sportupdb"  // failsafe
+    let databaseName = "sportupdb"  // failsafe
 }
 db = db.getSiblingDB(databaseName)
 db.events.remove({})
@@ -432,7 +432,16 @@ db.groups.insert({
     }],
     description: "Workouts die den Tag so richtig zum Starten bringen. Immer um 6 Uhr.",
     picture: "img/demo/nik-macmillan-myhNbM3PCg4-unsplash.jpg",
-    categories: ["PowerYoga", "Crossfit"]
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
 
 })
 
@@ -452,7 +461,16 @@ db.groups.insert({
     }],
     description: "Bring deine Muskeln zum Brennen, jeden Mittag mit Max und Tina!",
     picture: "img/demo/jonathan-borba-R0y_bEUjiOM-unsplash.jpg",
-    categories: ["PowerYoga", "Crossfit"]
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
 
 })
 
@@ -492,7 +510,16 @@ db.groups.insert({
     }],
     description: "'s lebbe geht weida, und wenn wir drinnen rudern!",
     picture: "img/demo/man-using-stationary-bike-897064.jpg",
-    categories: ["PowerYoga", "Crossfit"]
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
 
 })
 
