@@ -135,7 +135,12 @@
                     <h5><%= events[i].name %></h5>
                   </div>
                 </a>
-                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
+                <p>
+                    <%= events[i].startDate.toDateString() %> <br>
+                    <%= events[i].startDate.toTimeString().split(':').slice(0,2).join(':') %>
+                    -
+                    <%= events[i].endDate.toTimeString().split(':').slice(0,2).join(':') %>
+                </p>
                 <p><%= events[i].description %></p>
                 <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
               </div>
