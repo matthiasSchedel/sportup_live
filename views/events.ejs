@@ -2,8 +2,8 @@
 
 <body>
 
-  <!-- Navigation -->
-  <%- include('partials/navbar') %>
+    <!-- Navigation -->
+    <%- include('partials/navbar') %>
 
 
     <!-- Masthead -->
@@ -32,100 +32,8 @@
 
 
 
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <% if (messages.success) { %>
-            <div class="alert alert-success" role="alert"><%- messages.success %></div>
-            <% } %>
 
-            <% if (messages.error) { %>
-            <div class="alert alert-danger" role="alert"><%- messages.error %></div>
-            <% } %>
-            <div class="row">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addEvent"
-                        aria-expanded="false" aria-controls="addEvent">
-                        Event hinzufügen
-                    </button>
-                </p>
-                <div class="collapse" id="addEvent">
-                    <form action="/events" method="post">
-                        <div class="form-group row">
-                            <label class="col-4">Event Name</label>
-                            <div class="col-8">
-                                <input id="name" name="name" type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="example-datetime-local-input" class="col-2 col-form-label">Event Start</label>
-                            <div class="col-10">
-                                <input class="form-control" id="startDate" value="2020-03-10T13:45:00" name="startDate"
-                                    type="datetime-local" id="example-datetime-local-input">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="example-datetime-local-input" class="col-2 col-form-label">Event Ende</label>
-                            <div class="col-10">
-                                <input class="form-control" id="endDate" value="2020-03-10T14:45:00" name="endDate"
-                                    type="datetime-local" id="example-datetime-local-input">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Beschreibung</label>
-                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                        </div>
-
-
-
-
-                        <div class="form-group row">
-                            <div class="offset-4 col-8">
-                                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-
-
-                <table class="table">
-                    <caption>List of events</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Start</th>
-                            <th scope="col">Ende</th>
-                            <th scope="col">Beschreibung</th>
-                            <th scope="col">Aktionen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% if (locals.events) { %>
-                        <% for(var i=0; i<events.length; i++) {%>
-                        <tr>
-                            <th scope="row"><%= i %></th>
-                            <td><%= events[i].name %></td>
-                            <td><%= moment(events[i].startDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
-                            <td><%= moment(events[i].endDate).format('MMMM Do YYYY, h:mm:ss a')  %></td>
-                            <td><%= events[i].description %></td>
-                            <td>
-                                <a class="btn btn-danger delete" onclick="return alert('Bist du sicher?')" href="../events/delete/<%=events[i]._id%>">Delete</a>
-                            </td>
-                        </tr>
-                        <% } %>
-                        <% } %>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
+    <%- include('partials/events-partial') %>
 
     <%- include('partials/footer') %>
 
