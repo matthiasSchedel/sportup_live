@@ -41,8 +41,22 @@
                         id="exampleInputPassword" placeholder="*******">
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" name="checkbox" class="" id="exampleInputCheckbox"> Hiermit bestätige ich
-                      das ich die Datenschutz Bedingungen aktzeptiere.
+                      <fieldset>
+                        <!-- <legend>User Type</legend> -->
+                        <p>
+                          <label>Ich bin</label>
+                          <select id="myList" name="userType" class="form-control form-control-user">
+                            <option value="1">Teilnehmer</option>
+                            <option value="2">Trainer</option>
+                            <option value="3">Beides</option>
+                          </select>
+                        </p>
+                      </fieldset>
+                    </div>
+                    <div class="form-group">
+                      <input required type="checkbox" name="checkbox" class="" id="exampleInputCheckbox"> Hiermit
+                      bestätige ich
+                      das ich die <a href="/dsgvo"> Datenschutz Bedingungen</a> aktzeptiere.
 
                     </div>
                     <div class="form-group">
