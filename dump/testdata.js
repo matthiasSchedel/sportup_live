@@ -241,8 +241,8 @@ db.groups.insert({
         user: new ObjectId("000000000000000000000005"),
         name: "Arnold"
     }],
-    description: "Gruppe für Sport ab 6",
-    picture: "https://upload.wikimedia.org/wikipedia/en/7/76/Expendablesposter.jpg",
+    description: "Workouts die den Tag so richtig zum Starten bringen. Immer um 6 Uhr.",
+    picture: "img/demo/nik-macmillan-myhNbM3PCg4-unsplash.jpg",
     categories: ["PowerYoga", "Crossfit"],
     events: [{
         event: new ObjectId("000000000000000000000100"),
@@ -254,5 +254,142 @@ db.groups.insert({
         startDate: new Date("2020-03-22T17:30:00")
     }],
 
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000201"),
+    name: "MittagsPOWER",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "Bring deine Muskeln zum Brennen, jeden Mittag mit Max und Tina!",
+    picture: "img/demo/jonathan-borba-R0y_bEUjiOM-unsplash.jpg",
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
+
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000203"),
+    name: "Capoeira de Luz",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "Halte deine Capoeira-Skills fit! Jeden Mo, Mi und Fr ab 20 Uhr.",
+    picture: "img/demo/people-dancing-in-gym-3340318.jpg",
+    categories: ["PowerYoga", "Crossfit"]
+
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000205"),
+    name: "Ruderclub Rödelheim e.V.",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "'s lebbe geht weida, und wenn wir drinnen rudern!",
+    picture: "img/demo/man-using-stationary-bike-897064.jpg",
+    categories: ["PowerYoga", "Crossfit"],
+    events: [{
+        event: new ObjectId("000000000000000000000100"),
+        name: "Workout 1",
+        startDate: new Date("2020-03-22T15:00:00")
+    }, {
+        event: new ObjectId("000000000000000000000101"),
+        name: "Workout 2",
+        startDate: new Date("2020-03-22T17:30:00")
+    }],
+
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000206"),
+    name: "Hip Hop Hamburg Klub",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "Die besten Moves zu den fettsten Beats! Jeden Tag!",
+    picture: "img/demo/dancing-dance-people-hip-hop-12312.jpg",
+    categories: ["PowerYoga", "Crossfit"]
+
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000202"),
+    name: "Max Plan(c)k Challenge",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "Max Planks für alle vom Max Planck. Und Gäste.",
+    picture: "img/demo/woman-doing-push-ups-2780762.jpg",
+    categories: ["PowerYoga", "Crossfit"]
+
+})
+
+db.groups.insert({
+    _id: new ObjectId("000000000000000000000204"),
+    name: "Geräteschule",
+    trainers: [{
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter"
+    }],
+    participants: [{
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000005"),
+        name: "Arnold"
+    }],
+    description: "Wir zeigen euch den richtigen Einsatz aller Heimsportgeräte!",
+    picture: "img/demo/color-colour-fitness-health-39671.jpg",
+    categories: ["PowerYoga", "Crossfit"]
 
 })
