@@ -94,12 +94,7 @@
                         <h5><%= group.events[i].name %></h5>
                       </div>
                     </a>
-                    <p>
-                      <%= events[i].startDate.toDateString() %> <br>
-                      <%= events[i].startDate.toTimeString().split(':').slice(0,2).join(':') %>
-                      -
-                      <%= events[i].endDate.toTimeString().split(':').slice(0,2).join(':') %>
-                    </p>
+                    <p>Start: <%= moment(group.events[i].startDate).locale('de').format('L LT') %>
                     <p><%= group.events[i].description %></p>
                     <img src="<%= group.events[i].picture %>" class="img-thumbnail"></i>
                   </div>

@@ -132,12 +132,7 @@
             <div class="item">
               <div class="pad15">
                 <h5><%= events[i].name %></h5>
-                <p>
-                    <%= events[i].startDate.toDateString() %> <br>
-                    <%= events[i].startDate.toTimeString().split(':').slice(0,2).join(':') %>
-                    -
-                    <%= events[i].endDate.toTimeString().split(':').slice(0,2).join(':') %>
-                </p>
+                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
                   <p><%= events[i].description %></p>
               </div>
             </div>
