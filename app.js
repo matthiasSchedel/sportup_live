@@ -35,6 +35,7 @@ var Participant = require('./models/Participant.model');
 var Group = require('./models/Group.model');
 var Event = require('./models/Event.model');
 var Trainer = require('./models/Trainer.model');
+var MailService = require('./services/mailService');
 
 // ' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@
 // mongoose.connect('mongodb://' + process.env.MONGO_INITDB_ROOT_USERNAME + ":" + process.env.MONGO_INITDB_ROOT_PASSWORD + '@localhost:27017/' + process.env.MONGO_INITDB_DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -53,11 +54,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-    cookie: { maxAge: 60000 },
-    store: new session.MemoryStore,
-    saveUninitialized: true,
-    resave: 'true',
-    secret: 'secret'
+  cookie: { maxAge: 60000 },
+  store: new session.MemoryStore,
+  saveUninitialized: true,
+  resave: 'true',
+  secret: 'secret'
 }))
 app.use(flash());
 app.use(bodyParser.json());
@@ -82,7 +83,13 @@ passport.use(new LocalStrategy({
     {
       return next({ message: 'E-Mail oder Passwort falsch' })
     }
+    // (async () =>
+    // {
+    //   let res = MailService.sendMail(user.email, user.name).then(r => r).catch(e => e);
+    //   console.log('mail res', res);
+    // });
     next(null, user);
+
   })
 }));
 
@@ -144,6 +151,7 @@ app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login-page' }),
   function (req, res)
   {
+
     res.redirect('/main');
   });
 
