@@ -80,14 +80,19 @@
             <% if (locals.groups) { %>
             <% for(var i=0; i<groups.length; i++) {%>
             <div class="item">
-              <div class="pad15">
-                <a href="/group/<%- encodeURI(groups[i]._id) %>">
-                  <div>
-                    <h5><%= groups[i].name %></h5>
-                  </div>
-                </a>
-                <p><%= groups[i].description %></p>
-                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+              <div class="pad15 rounded-lg">
+                <column class="text-left col-m-1 pr-26">
+                  <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+
+                  <a href="/group/<%- encodeURI(groups[i]._id) %>">
+                    <div>
+                      <h5><%= groups[i].name %></h5>
+                    </div>
+                  </a>
+                  <p><%= groups[i].description %></p>
+                  <button class="btn btn-primary">
+                    Beitreten </button>
+                </column>
               </div>
             </div>
             <% } %>
@@ -105,20 +110,27 @@
         <h3 class="mb-3 mt-8"><a href="/events">Events</a></h3>
       </div>
       <div class="row">
-        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+        <div class="MultiCarousel" data-items="1,3,5,7" data-slide="1" id="MultiCarousel" data-interval="1000">
           <div class="MultiCarousel-inner">
             <% if (locals.events) { %>
             <% for(var i=0; i<events.length; i++) {%>
             <div class="item">
-              <div class="pad15">
-                <a href="/events/<%- encodeURI(events[i].id) %>">
-                  <div>
-                    <h5><%= events[i].name %></h5>
-                  </div>
-                </a>
-                <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
+              <div class="pad15 rounded-lg">
+                <column class="text-left col-m-1 pr-26">
+                  <caption><%= moment(events[i].startDate).locale('de').format('L LT') %></caption>
+                  <br />
+
+                  <!-- "<%=events[i].picture %>" -->
+                  <img src="/img/demo/nik-macmillan-myhNbM3PCg4-unsplash.jpg" class="img-thumbnail"></img>
+                  <a href="/events/<%- encodeURI(events[i].id) %>">
+                    <div>
+                      <b><%= events[i].name %></b>
+                    </div>
+                  </a>
                   <p><%= events[i].description %></p>
-                  <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
+                  <button class="btn btn-primary">
+                    Teilnehmen </button>
+                </column>
               </div>
             </div>
             <% } %>
