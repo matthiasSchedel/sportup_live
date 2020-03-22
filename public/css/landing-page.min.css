@@ -8,9 +8,32 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/sportup_3_facebook.png") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.main {
+  position: relative;
+  background-color: #729222;
+  /* background: url("../img/sportup_3_facebook.png") no-repeat center center; */
+  background-size: cover;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 header.masthead {
@@ -41,6 +64,7 @@ header.masthead h1 {
     padding-top: 12rem;
     padding-bottom: 12rem;
   }
+
   header.masthead h1 {
     font-size: 3rem;
   }
@@ -121,17 +145,28 @@ footer.footer {
 }
 
 @media (min-width: 768px) {
+
   /* show 3 items */
-  .carousel-inner .active, .carousel-inner .active+.carousel-item, .carousel-inner .active+.carousel-item+.carousel-item, .carousel-inner .active+.carousel-item+.carousel-item+.carousel-item {
+  .carousel-inner .active,
+  .carousel-inner .active+.carousel-item,
+  .carousel-inner .active+.carousel-item+.carousel-item,
+  .carousel-inner .active+.carousel-item+.carousel-item+.carousel-item {
     display: block;
   }
-  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left), .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item, .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item, .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item+.carousel-item {
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item+.carousel-item {
     transition: none;
   }
-  .carousel-inner .carousel-item-next, .carousel-inner .carousel-item-prev {
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
     position: relative;
     transform: translate3d(0, 0, 0);
   }
+
   .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
     position: absolute;
     top: 0;
@@ -140,12 +175,18 @@ footer.footer {
     display: block;
     visibility: visible;
   }
+
   /* left or forward direction */
-  .active.carousel-item-left+.carousel-item-next.carousel-item-left, .carousel-item-next.carousel-item-left+.carousel-item, .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item, .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item, .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+  .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left+.carousel-item,
+  .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+  .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item,
+  .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
     position: relative;
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
   }
+
   /* farthest right hidden item must be abso position for animations */
   .carousel-inner .carousel-item-prev.carousel-item-right {
     position: absolute;
@@ -155,8 +196,13 @@ footer.footer {
     display: block;
     visibility: visible;
   }
+
   /* right or prev direction */
-  .active.carousel-item-right+.carousel-item-prev.carousel-item-right, .carousel-item-prev.carousel-item-right+.carousel-item, .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item, .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item, .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+  .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right+.carousel-item,
+  .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+  .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item,
+  .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item+.carousel-item {
     position: relative;
     transform: translate3d(50%, 0, 0);
     visibility: visible;
@@ -225,7 +271,8 @@ footer.footer {
   color: #666;
 }
 
-.MultiCarousel .leftLst, .MultiCarousel .rightLst {
+.MultiCarousel .leftLst,
+.MultiCarousel .rightLst {
   position: absolute;
   border-radius: 50%;
   top: calc(50% - 20px);
@@ -239,7 +286,8 @@ footer.footer {
   right: 0;
 }
 
-.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
+.MultiCarousel .leftLst.over,
+.MultiCarousel .rightLst.over {
   pointer-events: none;
   background: #ccc;
 }
@@ -264,7 +312,8 @@ footer.footer {
   text-align: justify;
 }
 
-.main b, .main span {
+.main b,
+.main span {
   color: #729222;
 }
 
@@ -278,6 +327,7 @@ footer.footer {
   border-color: #729222;
 }
 
-a, .text-primary {
+a,
+.text-primary {
   color: #729222 !important;
 }

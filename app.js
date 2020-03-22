@@ -109,6 +109,7 @@ passport.use('signup-local', new LocalStrategy({
   }, function (err, user)
   {
     let body = req.body;
+    console.log('got body', JSON.stringify(req.body));
     // if (body.)
     // if (req) return next({ message: JSON.stringify(req.body) });
     if (err) return next(err);
@@ -158,6 +159,13 @@ app.get('/index.html', function (req, res, next)
 {
   res.redirect('/');
 });
+
+// app.get('/main', function (req, res, next)
+// {
+//   if (req.session.isLoggedIn) {
+
+//   }
+// });
 
 
 app.post('/login',
