@@ -87,7 +87,7 @@
                   </div>
                 </a>
                 <p><%= groups[i].description %></p>
-                <img src="/<%= groups[i].picture %>" class="img-thumbnail"></i>
+                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
@@ -118,7 +118,7 @@
                 </a>
                 <p>Start: <%= moment(events[i].startDate).locale('de').format('L LT') %>
                   <p><%= events[i].description %></p>
-                  <img src="/<%= events[i].picture %>" class="img-thumbnail"></i>
+                  <img src="<%= events[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>
@@ -131,6 +131,8 @@
       </div>
     </div>
   </section>
+  <%- include('partials/signup-partial') %>
+
 
   <!-- Footer -->
   <%- include('partials/footer') %>
