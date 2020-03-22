@@ -9,6 +9,7 @@ const groupSchema = new mongoose.Schema({
     participants: [{ user: ObjectId, name: String }],
     description: String,
     picture: String,
+    events: [{event: ObjectId, name: String, startDate: Date}],
 
 });
 const Group = mongoose.model("Group", groupSchema);
