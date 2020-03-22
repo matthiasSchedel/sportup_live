@@ -10,23 +10,15 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.post('/:name', function (req, res, next) {
-  GroupService.changeGroupState()
-  renderGroupDetail(req, res)
+router.post('/:id', function (req, res, next) {
+    // add logic here
 })
 
-router.get('/:name', function (req, res, next) {
-  renderGroupDetail(req, res)
+router.get('/:id', async function (req, res, next) {
+        var groups = await GroupService.findOne(req.params.id)
+        console.log('find group:' + groups)
+        res.render("group", { group: groups, isJoined: GroupService.isJoined() });
 });
-
-const renderGroupDetail = (req, res) => {
-  Group.findOne({ name: req.params.name }, function (error, result) {
-    res.render('group', {
-      group: result,
-      isJoined: GroupService.isJoined()
-    });
-  });
-}
 
 // Create a new event
 router.post("/", async function(req, res, next) {

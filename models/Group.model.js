@@ -4,6 +4,7 @@ var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
 const groupSchema = new mongoose.Schema({
+    id: mongoose.Types.ObjectId,
     name: String,
     trainers: [{ user: ObjectId, name: String }],
     participants: [{ user: ObjectId, name: String }],

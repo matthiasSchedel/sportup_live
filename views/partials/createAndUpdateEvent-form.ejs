@@ -45,14 +45,16 @@
                         <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
 
-                    <div class="form-group">
+                    <% if (locals.group) { %>
+                    <div style="display: none;" class="form-group">
                         <label for="description">Gruppe</label>
-                        <input id="group" name="group" type="text" class="form-control">
+                        <input id="groupId" name="groupId" type="number" class="form-control"><%= group._id %></input>
                     </div>
+                    <% } %>
 
                     <div class="form-group row">
                         <div class="offset-4 col-8">
-                            <button name="submit" type="submit" class="btn btn-primary" >Submit</button>
+                            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

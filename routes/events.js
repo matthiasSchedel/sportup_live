@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var moment = require("moment");
 var EventService = require("../services/eventService");
+var GroupService = require("../services/groupService");
 
 // Retrieve all events
 router.get("/", async function(req, res, next) {
@@ -17,6 +18,10 @@ router.get("/", async function(req, res, next) {
 // Create a new event
 router.post("/", async function(req, res, next) {
     try {
+        if (req.body.groupId) {
+            req.body.group = await GroupService.findOne(req.body.groupId)
+            console.log('found group' + req.body.group);
+        }
         await EventService.create(req)
         var events = await EventService.get({})
         res.render("events", { events: events, moment: moment });

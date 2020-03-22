@@ -29,6 +29,20 @@ exports.create = async function(req) {
   }
 };
 
+exports.findOne = async function(_id) {
+    try {
+      let groups = await Group.find({_id});
+      if (groups.length > 0) {
+          return groups[0]; 
+      }
+      throw Error("No group found");
+    } catch (e) {
+      // Log Errors
+      console.log(e);
+      throw Error("Error while Getting Group");
+    }
+  };
+
 function assignParamsToModel(req) {
   return new Group({
     name: req.body.name,

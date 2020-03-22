@@ -98,7 +98,7 @@
             <% for(var i=0; i<groups.length; i++) {%>
             <div class="item">
               <div class="pad15">
-                <a href="/group/<%- encodeURI(groups[i].name) %>">
+                <a href="/group/<%- encodeURI(groups[i]._id) %>">
                   <div>
                     <h5><%= groups[i].name %></h5>
                   </div>
