@@ -5,8 +5,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <!-- <div class="container"> -->
-    <a class="float-left navbar-brand" href="/"><img width="80" style="margin: -5px !important;" class="logo"
-        src="/img/logo.svg"></img></a>
+    <a class="float-left navbar-brand" href="/"><b>SportUp</b> Live</a>
     <div class="float-right">
       <a class="btn btn-primary btn-lg" href="/logout">Logout</a>
     </div>
@@ -20,7 +19,7 @@
       <div class="row">
         <div class="col-xl-8 mx-auto">
           <h1 class="mb-5">Finde deinen nächsten Live-Kurs</h1>
-          <h4 class="mb-3" style="opacity: 0.7"><%=events.length%> Events für diese Woche - <%=groups.length%>
+          <h4 class="mb-3" style="opacity: 0.7"><%=events.length%> Events für diese Woche in <%=groups.length%>
             Gruppe(n)
           </h4>
           <!-- </div> -->
@@ -100,7 +99,7 @@
               <div class="pad15">
                 <h5><%= groups[i].name %></h5>
                 <p><%= groups[i].description %></p>
-                <img src="<%= groups[i].picture %>" class="img-thumbnail"></i>
+                <img src="/<%= groups[i].picture %>" class="img-thumbnail"></i>
               </div>
             </div>
             <% } %>

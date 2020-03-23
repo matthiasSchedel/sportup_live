@@ -23,53 +23,91 @@
   <section class="features-icons bg-light showcase">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
-          <img src="<%= event.picture %>" class="img-fluid" />
-        </div>
-        <div class="col-lg-6">
-          <h2>Event: <%= event.name %></h2>
-          <div class="mt-5 text-left">
-            <h3>Trainer</h3>
-            <ul class="list-group">
-              <% if (locals.event.trainers) { %>
-              <% for(var i=0; i<event.trainers.length; i++) {%>
-              <li class="list-group-item"><i class="fa fa-user"></i> <%= event.trainers[i].name %></li>
-              <li class="list-group-item"><i class="fa fa-user"></i> Kai</li>
-              <% } %>
-              <% } %>
-            </ul>
-          </div>
-          <div class="mt-5 text-left">
-            <h3>Teilnehmer</h3>
-            <% if (locals.event.participants) { %>
-            <i class="fa fa-id-card"></i> <%= event.participants.length %>
-            <% } %>
-          </div>
+        <div class="col-12 col-md-4">
+          <h2><%= event.name %></h2>
+          <h6>mit <%= event.trainer.name %> in <%= event.location %></h6>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12">
-          <h3>Beschreibung
-          </h3>
-          <% if (locals.event) { %>
-          <%= event.description %>
-          <% } %>
+        <div class="col-md-5 order-1 order-md-2">
+          <img src="/<%= event.picture %>" class="img-fluid" />
+        </div>
+        <div class="col-md-7 order-2 order-md-1">
+          <p>
+            <%= moment(event.startDate).locale('de').format('L') %>,
+            <%= moment(event.startDate).locale('de').format('LT') %>
+            -
+            <%= moment(event.endDate).locale('de').format('LT') %>
+          </p>
+          <p>
+            <% if (locals.event) { %>
+              <%= event.description %>
+            <% } %>            
+          </p>
+          <p>Kategorie: 
+            <% if (locals.event.participants) {  %>
+              <% for(var i=0; i<locals.event.categories.length; i++) { %>
+                <span class="event-category"><%= locals.event.categories[i] %></span>
+              <% } %>
+            
+            <% } %>            
+          <br>
+          Schwierigkeit: <%= locals.event.difficulty %>
+          <br>
+          Sprache: <%= locals.event.language %>
+
+          </p>
+          <p> 
+            <% if (locals.event.participants) {  %>
+              <% for(var i=0; i<locals.event.tags.length; i++) { %>
+                <span class="event-tag">#<%= locals.event.tags[i] %></span>
+              <% } %>
+            
+            <% } %>            
+          </p>    
+        </div>
+      </div>      
+          <div class="row">
+            <div class="col-12">
+              <p>
+            <h6>Teilnehmer</h6>
+            <% if (locals.event.participants) {  %>
+              <% for(var i=0; i<locals.event.participants.length; i++) { %>
+                <!-- In future versions this should be the circular profile image -->
+                <!-- <img class="rounded-circle event-participant-image" src=<%= locals.event.participants[i].profilePic %> /> -->
+                <span class="event-image-circle"><%= locals.event.participants[i].name[0] %></span>
+              <% } %>
+            
+            <% } else { %>
+              Noch keine Teilnehmer. Gleich anmelden! <%= event.trainer.name %> freut sich.
+              <% } %>
+            </p>
+          <p>
+            <% if (locals.event.groups.length > 0) {  %>
+              <h6>Teil folgender Gruppen</h6>
+              <% for(var i=0; i<locals.event.groups.length; i++) { %>
+                <!-- In future versions this should be the circular profile image -->
+                <!-- <img class="rounded-circle event-participant-image" src=<%= locals.event.participants[i].profilePic %> /> -->
+                <span class="event-image-circle"><%= locals.event.groups[i].name[0] %></span>
+              <% } %>
+            
+            <% } %>
+              </p>          
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-12">
-          <% if (locals.event) { %>
-          <h5>Du kannst unter folgendem Link am Live Stream teilnehmen:
-          </h5>
-          <%= event.sessionLink %>
-          <% } %>
-          <% if (locals.event.paymentLink) { %>
-          <h5>Und unter folgendem Link dem Lehrer Geld bezahlen:
-          </h5>
-          <%= event.paymentLink %>
-          <% } %>
-        </div>
+          <p>
+            <% if (locals.event) { %>
+                Teilnahme: <a href=<%= event.sessionLink %> /> <%= event.sessionLink %> </a> 
+                
+            <% } %>
+          </p>
+            <% if (locals.event.paymentLink) { %>
+                Kursspende: <a href=<%= event.paymentLink %> /> <%= event.paymentLink %> </a> 
+            <% } %>
+            </div>
       </div>
     </div>
   </section>
