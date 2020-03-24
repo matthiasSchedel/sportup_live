@@ -56,11 +56,13 @@
           <p><%= group.description %></p>
         </div>
         <div class="col-12 col-md-9 mb-2 mb-md-0 col-lg-3 float-lg-right">
+          <% if(loggedIn) { %>
           <form action="" method="POST">
             <button type="submit" class="btn btn-block btn-lg btn-primary">
               <%- isJoined ? 'Gruppe verlassen' : 'Gruppe beitreten' %>
-            </button>
+          </button>
           </form>
+          <% } %>
         </div>
       </div>
     </div>
@@ -85,7 +87,7 @@
                   </a>
                   <p>Start: <%= moment(group.events[i].startDate).locale('de').format('L LT') %>
                     <p><%= group.events[i].description %></p>
-                    <img src="<%= group.events[i].picture %>" class="img-thumbnail"></i>
+                    <img src="/<%= group.events[i].picture %>" class="img-thumbnail"></i>
                 </div>
               </div>
               <% } %>
