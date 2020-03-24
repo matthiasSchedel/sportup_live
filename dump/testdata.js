@@ -1,5 +1,6 @@
 var checkDB = typeof databaseName
-if (checkDB == "undefined") {
+if (checkDB == "undefined")
+{
     let databaseName = "sportupdb"  // failsafe
 }
 db = db.getSiblingDB(databaseName)
@@ -21,12 +22,12 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine"
-        }, {
-            user: new ObjectId("000000000000000000000004"),
-            name: "Ryan"
-        }
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine"
+    }, {
+        user: new ObjectId("000000000000000000000004"),
+        name: "Ryan"
+    }
     ],
     comments: [],
     description: "Ich bring dich zuhause so richtig ins Schwitzen, ganz ohne große Ausrüstung.",
@@ -41,7 +42,7 @@ db.events.insert({
         rating: 2,
         comment: "Geht so"
     }],
-    picture: "img/demo/events/bruce-mars-WGN6ZEFEZbs-unsplash.jpg",
+    picture: "/img/demo/events/bruce-mars-WGN6ZEFEZbs-unsplash.jpg",
 })
 
 db.events.insert({
@@ -56,15 +57,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000005"), name: "Arnold" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Power-Workout für die nächsten Arnies! Schnapp dir die Hantel und mach mit!",
@@ -79,7 +80,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/man-holding-black-dumbbell-1229356.jpg",
+    picture: "/img/demo/events/man-holding-black-dumbbell-1229356.jpg",
 })
 
 db.events.insert({
@@ -94,15 +95,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Kerstin schaut sich live deine Übungen an und hilft dir die richtige Pose zu finden!",
@@ -117,7 +118,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/event3.jpg",
+    picture: "/img/demo/events/event3.jpg",
 })
 
 db.events.insert({
@@ -132,15 +133,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Lasst uns gemeinsam Tatort schauen und Yoga machen! Perfect Sunday evening 😊",
@@ -155,7 +156,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/event4.jpg",
+    picture: "/img/demo/events/event4.jpg",
 })
 
 db.events.insert({
@@ -170,15 +171,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Montagsworkout zum Niederknien! Für Power die ganze Woche!",
@@ -193,7 +194,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/event5.jpg",
+    picture: "/img/demo/events/event5.jpg",
 })
 
 db.events.insert({
@@ -208,15 +209,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Abwechslung beim Full Body Workout mit Steffi. Spaß garantiert!",
@@ -231,7 +232,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/event6.jpg",
+    picture: "/img/demo/events/event6.jpg",
 })
 
 db.events.insert({
@@ -246,15 +247,15 @@ db.events.insert({
     trainer: { user: new ObjectId("000000000000000000000001"), name: "Peter" },
     language: "de",
     participants: [{
-            user: new ObjectId("000000000000000000000001"),
-            name: "Peter",
-        }, {
-            user: new ObjectId("000000000000000000000002"),
-            name: "Janine",
-        }, {
-            user: new ObjectId("000000000000000000000003"),
-            name: "Kerstin",
-        }
+        user: new ObjectId("000000000000000000000001"),
+        name: "Peter",
+    }, {
+        user: new ObjectId("000000000000000000000002"),
+        name: "Janine",
+    }, {
+        user: new ObjectId("000000000000000000000003"),
+        name: "Kerstin",
+    }
     ],
     comments: [],
     description: "Wir zeigen dir wie du mit allem was der Hamster gekauft hat so richtig powern kannst.",
@@ -269,7 +270,7 @@ db.events.insert({
         rating: 4,
         comment: "Top"
     }],
-    picture: "img/demo/events/event7.jpg",
+    picture: "/img/demo/events/event7.jpg",
 })
 
 db.users.insert({
@@ -289,7 +290,7 @@ db.users.insert({
     _id: new ObjectId("000000000000000000000002"),
     name: "Janine",
     email: "janine_sul@mailinator.com",
-    friends: [ {
+    friends: [{
         user: new ObjectId("000000000000000000000001"),
         name: "Peter"
     }
@@ -431,7 +432,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Workouts die den Tag so richtig zum Starten bringen. Immer um 6 Uhr.",
-    picture: "img/demo/nik-macmillan-myhNbM3PCg4-unsplash.jpg",
+    picture: "/img/demo/nik-macmillan-myhNbM3PCg4-unsplash.jpg",
     categories: ["PowerYoga", "Crossfit"],
     events: [{
         event: new ObjectId("000000000000000000000100"),
@@ -460,7 +461,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Bring deine Muskeln zum Brennen, jeden Mittag mit Max und Tina!",
-    picture: "img/demo/jonathan-borba-R0y_bEUjiOM-unsplash.jpg",
+    picture: "/img/demo/jonathan-borba-R0y_bEUjiOM-unsplash.jpg",
     categories: ["PowerYoga", "Crossfit"],
     events: [{
         event: new ObjectId("000000000000000000000100"),
@@ -489,7 +490,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Halte deine Capoeira-Skills fit! Jeden Mo, Mi und Fr ab 20 Uhr.",
-    picture: "img/demo/people-dancing-in-gym-3340318.jpg",
+    picture: "/img/demo/people-dancing-in-gym-3340318.jpg",
     categories: ["PowerYoga", "Crossfit"]
 
 })
@@ -509,7 +510,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "'s lebbe geht weida, und wenn wir drinnen rudern!",
-    picture: "img/demo/man-using-stationary-bike-897064.jpg",
+    picture: "/img/demo/man-using-stationary-bike-897064.jpg",
     categories: ["PowerYoga", "Crossfit"],
     events: [{
         event: new ObjectId("000000000000000000000100"),
@@ -538,7 +539,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Die besten Moves zu den fettsten Beats! Jeden Tag!",
-    picture: "img/demo/dancing-dance-people-hip-hop-12312.jpg",
+    picture: "/img/demo/dancing-dance-people-hip-hop-12312.jpg",
     categories: ["PowerYoga", "Crossfit"]
 
 })
@@ -558,7 +559,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Max Planks für alle vom Max Planck. Und Gäste.",
-    picture: "img/demo/woman-doing-push-ups-2780762.jpg",
+    picture: "/img/demo/woman-doing-push-ups-2780762.jpg",
     categories: ["PowerYoga", "Crossfit"]
 
 })
@@ -578,7 +579,7 @@ db.groups.insert({
         name: "Arnold"
     }],
     description: "Wir zeigen euch den richtigen Einsatz aller Heimsportgeräte!",
-    picture: "img/demo/color-colour-fitness-health-39671.jpg",
+    picture: "/img/demo/color-colour-fitness-health-39671.jpg",
     categories: ["PowerYoga", "Crossfit"]
 
 })

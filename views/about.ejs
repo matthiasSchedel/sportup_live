@@ -1,60 +1,75 @@
 <%- include('partials/head') %>
 
-<body class="bg-gradient-primary">
+<body>
 
   <!-- Navigation -->
   <%- include('partials/navbar') %>
 
-  <div class="container">
+  <%- include('partials/banner') %>
 
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
+  <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+          <h1>Über uns</h1>
+          <p> Sportup Live ist eine Plattform für alle, die sich in Zeiten von Social Distancing gemeinsam virtuell fit
+            halten wollen. Die Plattform möchten Menschen, die aktuell Ihr zu Hause nicht verlassen dürfen und Trainer,
+            die Kurse von zu Hause anbieten wollen, verbinden.
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                  </div>
-                  <form class="user" action="/login" method="post">
-                    <div class="form-group">
-                      <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail"
-                        aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-user"
-                        id="exampleInputPassword" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" value="Login" class="btn btn-primary btn-user btn-block" />
-                    </div>
+          </p>
+          <p>
+            Viele Trainer haben seit der Krise alle Einnahmequellen verloren. Wir wollen dir mit dieser Plattform helfen
+            auf eine einfache Weise mit deinen bisherigen Teilnehmern in Kontakt zu treten oder auch deinen Kurs für
+            eine
+            größere Gruppe zu öffnen.</p>
 
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="/">Home</a>
-                  </div>
-                </div>
-              </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="d-flex">
+              <!-- <i class="fa fa-chalkboard-teacher m-auto text-primary"></i> -->
+              <img class="img-thumbnail" alt="trainer" src="/img/woman-exercising-bear-body-of-water-1300526.jpg" />
             </div>
+            <h3>Für Trainer</h3>
+            <p class="lead mb-0">Erstellt in SportUp Live ganz einfach einen Kalender mit all euren geplanten
+              Livestreams
+              und gebt
+              ein, wie die Teilnehmer euch für den virtuellen Kurs bezahlen können.</p>
           </div>
         </div>
-
+        <div class="col-lg-6">
+          <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="d-flex">
+              <!-- <i class="fa fa-running m-auto text-primary"></i> -->
+              <img class="img-thumbnail" alt="trainer" src="/img/group-of-woman-in-yoga-class-866021.jpg" />
+            </div>
+            <h3>Für Sportbegeisterte</h3>
+            <p class="lead mb-0">In der Kalenderfunktion findet ihr alle Livestreams der teilnehmenden Trainer.
+              Über die
+              Filterfunktion könnt ihr einerseits euren bisherigen Trainer finden oder auch einfach euren
+              Lieblingssport
+              auswählen oder nach bestimmten Zeiten filtern, um den perfekten Kurs für euch zu finden.</p>
+          </div>
+        </div>
       </div>
-
     </div>
+  </section>
+  <%- include('partials/signup-partial') %>
 
-  </div>
 
-    <%- include('partials/footer') %>
-
- 
+  <%- include('partials/footer') %>
 
 </body>
 

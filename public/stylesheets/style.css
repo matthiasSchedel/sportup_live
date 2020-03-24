@@ -4,5 +4,9 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(29, 199, 108);
+}
+
+img.img-thumbnail {
+  max-height: 500px !important;
 }
